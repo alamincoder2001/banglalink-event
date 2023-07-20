@@ -405,7 +405,7 @@ textarea:focus {
 /* padding - margin setting - start 
 ================================================== */
 .sec-ptb-100 {
-    padding: 100px 0px;
+    padding: 35px 0px;
 }
 
 .mb-15 {
@@ -499,7 +499,7 @@ textarea:focus {
 .section-title {
     position: relative;
 }
-.section-title .line-style {
+/* .section-title .line-style {
     z-index: 1;
     top: -30px;
     left: -30px;
@@ -507,7 +507,7 @@ textarea:focus {
     height: 3px;
     position: absolute;
     background-color: #ffbe30;
-}
+} */
 .section-title .sub-title {
     margin-bottom: 15px;
     letter-spacing: 5px;
@@ -4635,7 +4635,7 @@ button {
 /* special-offer-section - start
 ==================================================================================================== */
 .special-offer-section {
-    padding: 60px 0px;
+    padding: 70px 0px;
     color: #ffffff;
     background-size: cover;
     background-repeat: no-repeat;
@@ -4654,25 +4654,25 @@ button {
     font-weight: 900;
 }
 .special-offer-section .event-makeing-btn {
-    padding: 23px 0px;
+    padding: 10px 0px;
     text-align: right;
 }
 .special-offer-section .event-makeing-btn a {
     font-weight: 600;
-    padding: 15px 45px;
+    padding: 15px 60px;
     text-align: center;
     border-radius: 30px;
-    color: #ffbe30;
-    font-size: 14px;
+    color: #fff;
+    font-size: 18px;
     text-transform: uppercase;
-    background-color: #ffffff;
+    background-color: orange;
     -webkit-box-shadow: 0 5px 60px 5px rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 60px 5px rgba(0, 0, 0, 0.2);
 }
-.special-offer-section .event-makeing-btn a:hover {
+/* .special-offer-section .event-makeing-btn a:hover {
     color: #ffffff;
     background-color: #ffbe30;
-}
+} */
 
 /* special-offer-section - end
 ==================================================================================================== */
@@ -4753,6 +4753,7 @@ button {
 }
 
 .event-section .tab-content .event-item {
+    border-color: #ffbe30 !important;
     padding: 15px;
     margin-bottom: 30px;
     background-color: #ffffff;
@@ -4850,16 +4851,16 @@ button {
     background-color: #f7f7f7;
 }
 .event-section .tab-content .event-item .event-content .tickets-details-btn {
+    color: #ffffff;
+    background: #ffbe30;
     z-index: 1;
     font-weight: 600;
     overflow: hidden;
     padding: 15px 45px;
     position: relative;
     border-radius: 30px;
-    color: #878787;
     font-size: 14px;
     text-transform: uppercase;
-    background: #f7f7f7;
 }
 .event-section
     .tab-content
@@ -4909,7 +4910,7 @@ button {
 }
 
 .event-section .tab-content .pagination ul {
-    margin: 50px auto 0px;
+    margin: 0 auto;
 }
 
 /* event-section - end
@@ -6376,7 +6377,7 @@ button {
 }
 
 .event-section .tab-content .pagination ul {
-    margin: 50px auto 0px;
+    margin: 0 auto;
 }
 
 /* home page 2 - end
@@ -11028,15 +11029,15 @@ button {
 2 - media screen and (max-width: 991px) - start --->>>for medium device
 ==================================================================================================== */
 @media screen and (max-width: 991px) {
-    .header-section {
+    /* .header-section {
         display: none;
-    }
-    .header-altranative {
+    } */
+    /* .header-altranative {
         display: block;
-    }
-    body {
+    } */
+    /* body {
         padding-top: 98px;
-    }
+    } */
     .slide-section .main-carousel1 .item .slider-item-content {
         padding: 100px;
         padding-bottom: 250px;
