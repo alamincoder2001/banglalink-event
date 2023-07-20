@@ -585,9 +585,6 @@
 				<div class="col-lg-9 col-md-12 col-sm-12">
 					<div class="special-offer-content">
 						<h2><strong>Banglalink Youth Fest-{{date('Y')}}</strong></h2>
-						<p class="m-0">
-							Contact us now and we will make your event unique & unforgettable
-						</p>
 					</div>
 				</div>
 				<!-- special-offer-content - end -->
