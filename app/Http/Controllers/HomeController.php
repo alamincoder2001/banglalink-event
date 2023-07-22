@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ExampleRegister;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -14,19 +15,28 @@ class HomeController extends Controller
 
     public function ExampleReg(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:100',
+            'phone' => 'required|unique:example_registers,phone|digits:11',
+            'email' => 'required|email|unique:example_registers,email|max:100',
+            'address' => 'required|max:255',
+        ]);
+
+        if ($validator->fails()) {
+            $notification = array(
+                'message' => $validator->errors(),
+                'msg_type' => false,
+            );
+            return response()->json($notification);
+        }
         
         try {
-            $this->validate($request, [
-                'name' => 'required|max:100',
-                'phone' => 'required|unique:example_registers,phone|digits:11',
-                'email' => 'required|email|unique:example_registers,email|max:100',
-                'address' => 'required|max:255',
-            ]);
 
             $rFormat                  = date('y') . '01';
             $register                 = new ExampleRegister();
             $register->registrationID = $this->generateCode("ExampleRegister", $rFormat);
             $register->name           = $request->name;
+            $register->slug           = $this->make_slug(date('Y-m').' '.$request->name);
             $register->phone          = $request->phone;
             $register->email          = $request->email;
             $register->university     = $request->university;
@@ -36,7 +46,7 @@ class HomeController extends Controller
             $notification = array(
                 'message' => 'Register Successfully',
                 'msg_type' => true,
-                'lastId' => $register->id
+                'slug' => $register->slug
             );
             return $notification;
         } catch (\Exception $e) {
@@ -47,9 +57,13 @@ class HomeController extends Controller
         }
     }
 
-    public function registerComplete($id)
+    public function registerComplete($slug)
     {
-        $data = ExampleRegister::where('id', $id)->first();
-        return view('registerview', compact('data'));
+        $data = ExampleRegister::where('slug', $slug)->first();
+        if (!empty($data)) {
+            return view('registerview', compact('data'));
+        }else{
+            return redirect('/');
+        }
     }
 }

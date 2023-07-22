@@ -17,6 +17,7 @@ class CreateExampleRegistersTable extends Migration
             $table->id();
             $table->string('registrationID');
             $table->string('name', 100);
+            $table->string('slug');
             $table->string('phone', 20)->unique();
             $table->string('email', 100)->unique();
             $table->string('university');
