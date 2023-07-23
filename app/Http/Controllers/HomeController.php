@@ -64,7 +64,7 @@ class HomeController extends Controller
         if (!empty($data)) {
             return view('registerview', compact('data'));
         } else {
-            return back();
+            return view('website');
         }
     }
 
