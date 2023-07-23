@@ -832,9 +832,11 @@
             },
             success: res => {
                 if (res.msg_type) {
-                    setTimeout(() => {
+                    if (res.slug == '') {
+                        $("#exampleModalCenter").find('form .phone').text("Data not match");
+                    } else {
                         location.href = "/register-complete/" + res.slug
-                    }, 1000)
+                    }
                 } else {
                     $("#exampleModalCenter").find('form .phone').text(res.message.phone);
                 }
