@@ -30,20 +30,26 @@
                     <span> Dashboards </span>
                 </a>
             </li>
+            <li class="side-nav-item {{Route::is('admin.registerlist') ? 'menuitem-active': ''}}">
+                <a href="{{route('admin.registerlist')}}" class="side-nav-link {{Route::is('admin.registerlist') ? 'active': ''}}">
+                    <i class="uil-home-alt"></i>
+                    <span> Register List </span>
+                </a>
+            </li>
             <!-- <li class="side-nav-item">
-                        <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
-                            <i class="uil-store"></i>
-                            <span> Ecommerce </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <div class="collapse" id="sidebarEcommerce">
-                            <ul class="side-nav-second-level">
-                                <li>
-                                    <a href="apps-ecommerce-products.html">Products</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li> -->
+                <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
+                    <i class="uil-store"></i>
+                    <span> Ecommerce </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEcommerce">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="apps-ecommerce-products.html">Products</a>
+                        </li>
+                    </ul>
+                </div>
+            </li> -->
 
 
         </ul>

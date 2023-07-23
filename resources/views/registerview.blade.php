@@ -2,10 +2,11 @@
 
 @section('content')
 <div class="container">
-    <div class="row" style="background: orangered;height:120px;display: flex;align-items: center;justify-content: center;">
-        <a class="text-white" href="{{route('website')}}">Back To Home</a>
+    <div class="row" style="background: orangered;height:120px;display: flex;align-items: center;justify-content: space-around;">
+        <a class="text-white" style="text-decoration: underline;" href="{{route('website')}}">Back To Home</a>
+        <a class="text-white" style="background: green;padding: 3px 15px;" onclick="printWindow(event)">Print</a>
     </div>
-    <div class="row" id="content">
+    <div class="row mb-5 mt-2" id="content">
         <div class="col-md-12">
             <h3>Banglalink Youth Fest - 2023</h3>
             <table>
@@ -60,11 +61,14 @@
     }
     generate();
 
-    setTimeout(() => {
-        let printContent = document.getElementById('#content').innerHTML();
+    function printWindow(event) {
+        event.preventDefault();
+        let printContent = document.getElementById('content').innerHTML;
         document.write(printContent)
+        $("#qrcode").css({display: 'flex', justifyContent:'center'});
         window.print();
-    }, 1000)
-    // location.reload();
+        location.reload();
+    }
+
 </script>
 @endpush

@@ -157,21 +157,21 @@
                                     <span class="text-white error-name d-none"></span>
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-12">
                                 <div class="form-item">
                                     <input type="phone" name="phone" placeholder="Phone Number" autocomplete="off">
                                     <span class="text-white error-phone d-none"></span>
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-12">
                                 <div class="form-item">
                                     <input type="email" name="email" placeholder="Email Address" autocomplete="off">
                                     <span class="text-white error-email d-none"></span>
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-12">
                                 <div class="form-item">
                                     <select name="university" id="event-category-select">
@@ -184,8 +184,9 @@
                             </div>
 
                             <div class="col-sm-12 text-right">
-                                <div class="form-item mb-0">
+                                <div class="form-item mb-0 text-left">
                                     <textarea name="address" placeholder="Your Address"></textarea>
+                                    <span class="text-white error-address d-none"></span>
                                 </div>
                                 <button type="submit" class="custom-btn">Register</button>
                             </div>
@@ -803,18 +804,43 @@
                     setTimeout(() => {
                         location.href = "/register-complete/" + res.slug
                     }, 1000)
-                }else{
+                } else {
                     $.each(res.message, (index, value) => {
-                        $("#contact-section").find('form .error-'+index).text(value).removeClass('d-none');
+                        $("#contact-section").find('form .error-' + index).text(value).removeClass('d-none');
                     })
                 }
             }
         })
     }
 
-    function Reprint(event){
+    function Reprint(event) {
         event.preventDefault();
         $("#exampleModalCenter").modal("show");
+    }
+
+    function ReprintSubmit(event) {
+        event.preventDefault();
+        let formdata = new FormData(event.target)
+        $.ajax({
+            url: "/re-print",
+            method: "POST",
+            processData: false,
+            contentType: false,
+            data: formdata,
+            beforeSend: () => {
+                $("#exampleModalCenter").find('form .phone').text('');
+            },
+            success: res => {
+                if (res.msg_type) {
+                    setTimeout(() => {
+                        location.href = "/register-complete/" + res.slug
+                    }, 1000)
+                } else {
+                    $("#exampleModalCenter").find('form .phone').text(res.message.phone);
+                }
+            }
+        })
+
     }
 </script>
 @endpush
