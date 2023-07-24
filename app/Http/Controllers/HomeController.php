@@ -129,11 +129,13 @@ class HomeController extends Controller
 
     public function gallery() 
     {
-        return view('gallery');
+        $galleries = Gallery::latest()->get();
+        return view('gallery', compact('galleries'));
     }
-
+    
     public function participant() 
     {
-        return view('participant');
+        $participants = Participating::latest()->get();
+        return view('participant', compact('participants'));
     }
 }
