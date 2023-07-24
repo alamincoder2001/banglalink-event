@@ -119,7 +119,7 @@
     function Delete(id) {
         if (confirm("Are you sure!")) {
             $.ajax({
-                url: '/admin/delete-university/' + id,
+                url: '/admin/delete/' + id,
                 method: "GET",
                 success: res => {
                     if (res.status) {

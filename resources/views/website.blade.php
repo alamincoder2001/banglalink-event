@@ -142,27 +142,16 @@
                             <div class="col-md-1">
                                 <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset('frontend')}}/assets/images/event/nsu.png" alt="Image_not_found">
                             </div>
-                            <div class="title col-md-11 d-flex align-items-center justify-content-between">
+                            <div class="title col-md-2">
                                 <span>Sun 18/06/2023</span>
+                            </div>
+                            <div class="title col-md-5">
                                 <span>North South University</span>
-                                <span>|</span>
-                                <span>1:00 PM - 5:00 PM</span>
-                                <a href="#!" class="custom-btn">
-                                    details
-                                </a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="row event-item d-flex align-items-center">
-                            <div class="col-md-1">
-                                <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset('frontend')}}/assets/images/event/aiub.png" alt="Image_not_found">
-                            </div>
-                            <div class="title col-md-11 d-flex align-items-center justify-content-between">
-                                <span>Sun 18/06/2023</span>
-                                <span>American International University-Bangladesh</span>
-                                <span>|</span>
+                            <div class="title col-md-2">
                                 <span>1:00 PM - 5:00 PM</span>
+                            </div>
+                            <div class="title col-md-2 text-right">
                                 <a href="#!" class="custom-btn">
                                     details
                                 </a>
@@ -174,11 +163,16 @@
                             <div class="col-md-1">
                                 <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset('frontend')}}/assets/images/event/nsu.png" alt="Image_not_found">
                             </div>
-                            <div class="title col-md-11 d-flex align-items-center justify-content-between">
+                            <div class="title col-md-2">
                                 <span>Sun 18/06/2023</span>
-                                <span>North South University</span>
-                                <span>|</span>
+                            </div>
+                            <div class="title col-md-5">
+                                <span>American International University-Bangladesh</span>
+                            </div>
+                            <div class="title col-md-2">
                                 <span>1:00 PM - 5:00 PM</span>
+                            </div>
+                            <div class="title col-md-2 text-right">
                                 <a href="#!" class="custom-btn">
                                     details
                                 </a>
@@ -188,13 +182,39 @@
                     <div class="col-md-12">
                         <div class="row event-item d-flex align-items-center">
                             <div class="col-md-1">
-                                <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset('frontend')}}/assets/images/event/aiub.png" alt="Image_not_found">
+                                <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset('frontend')}}/assets/images/event/nsu.png" alt="Image_not_found">
                             </div>
-                            <div class="title col-md-11 d-flex align-items-center justify-content-between">
+                            <div class="title col-md-2">
                                 <span>Sun 18/06/2023</span>
-                                <span>American International University-Bangladesh</span>
-                                <span>|</span>
+                            </div>
+                            <div class="title col-md-5">
+                                <span>North South University</span>
+                            </div>
+                            <div class="title col-md-2">
                                 <span>1:00 PM - 5:00 PM</span>
+                            </div>
+                            <div class="title col-md-2 text-right">
+                                <a href="#!" class="custom-btn">
+                                    details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row event-item d-flex align-items-center">
+                            <div class="col-md-1">
+                                <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset('frontend')}}/assets/images/event/nsu.png" alt="Image_not_found">
+                            </div>
+                            <div class="title col-md-2">
+                                <span>Sun 18/06/2023</span>
+                            </div>
+                            <div class="title col-md-5">
+                                <span>American International University-Bangladesh</span>
+                            </div>
+                            <div class="title col-md-2">
+                                <span>1:00 PM - 5:00 PM</span>
+                            </div>
+                            <div class="title col-md-2 text-right">
                                 <a href="#!" class="custom-btn">
                                     details
                                 </a>
@@ -204,6 +224,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
 </section>

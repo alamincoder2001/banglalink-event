@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UniversityController;
 
 Route::group(['prefix' => 'admin'], function () {
@@ -22,5 +24,17 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/get-university/{id?}', [UniversityController::class, 'index'])->name('admin.university.index');
     Route::post('/university', [UniversityController::class, 'store'])->name('admin.university.store');
     Route::get('/delete-university/{id}', [UniversityController::class, 'destroy'])->name('admin.university.destroy');
+
+    // slider
+    Route::get('/slider', [SliderController::class, 'create'])->name('admin.slider.create');
+    Route::get('/get-slider/{id?}', [SliderController::class, 'index'])->name('admin.slider.index');
+    Route::post('/slider', [SliderController::class, 'store'])->name('admin.slider.store');
+    Route::get('/delete-slider/{id}', [SliderController::class, 'destroy'])->name('admin.slider.destroy');
+   
+    // event
+    Route::get('/event', [EventController::class, 'create'])->name('admin.event.create');
+    Route::get('/get-event/{id?}', [EventController::class, 'index'])->name('admin.event.index');
+    Route::post('/event', [EventController::class, 'store'])->name('admin.event.store');
+    Route::get('/delete-event/{id}', [EventController::class, 'destroy'])->name('admin.event.destroy');
 
 });

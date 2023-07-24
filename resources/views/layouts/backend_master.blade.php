@@ -26,6 +26,32 @@
 
     <!-- Icons css -->
     <link href="{{asset('backend')}}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        .ImageBackground .imageShow {
+            display: block;
+            height: 120px;
+            width: 135px;
+            margin-top: 10px;
+            border: 1px solid #ffb100;
+            border-bottom: 0;
+            box-sizing: border-box;
+        }
+
+        .ImageBackground input {
+            display: none;
+        }
+
+        .ImageBackground label {
+            background: #ffb100;
+            width: 135px;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+            font-family: monospace;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 
 <body>

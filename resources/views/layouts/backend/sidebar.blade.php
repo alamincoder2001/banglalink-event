@@ -32,13 +32,26 @@
             </li>
             <li class="side-nav-item {{Route::is('admin.registerlist') ? 'menuitem-active': ''}}">
                 <a href="{{route('admin.registerlist')}}" class="side-nav-link {{Route::is('admin.registerlist') ? 'active': ''}}">
-                    <i class="uil-home-alt"></i>
+                    <i class="ri-file-user-line"></i>
                     <span> Register List </span>
+                </a>
+            </li>
+
+            <li class="side-nav-item {{Route::is('admin.event.create') ? 'menuitem-active': ''}}">
+                <a href="{{route('admin.event.create')}}" class="side-nav-link {{Route::is('admin.event.create') ? 'active': ''}}">
+                    <i class="mdi mdi-calendar"></i>
+                    <span> Event Entry </span>
+                </a>
+            </li>
+            <li class="side-nav-item {{Route::is('admin.slider.create') ? 'menuitem-active': ''}}">
+                <a href="{{route('admin.slider.create')}}" class="side-nav-link {{Route::is('admin.slider.create') ? 'active': ''}}">
+                    <i class="ri-slideshow-2-line"></i>
+                    <span> Slider Entry </span>
                 </a>
             </li>
             <li class="side-nav-item {{Route::is('admin.university.create') ? 'menuitem-active': ''}}">
                 <a href="{{route('admin.university.create')}}" class="side-nav-link {{Route::is('admin.university.create') ? 'active': ''}}">
-                    <i class="uil-home-alt"></i>
+                    <i class="mdi mdi-school"></i>
                     <span> University Entry </span>
                 </a>
             </li>
