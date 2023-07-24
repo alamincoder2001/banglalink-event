@@ -132,7 +132,7 @@
       <div class="carousel-item active">
         <img src="{{asset('frontend')}}/assets/images/slider/slider-bg1.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block text-white">
-            <h4>AIUB Youth Fest - 2023</h4>
+            <h4>AIUB Youth Fest - 2023 AIUB Youth Fest</h4>
             <p>every event sould be perfect</p>
             <a href="" class="about-btn custom-btn">About Us</a>
             <a href="" class="start-btn">Get Started</a>
@@ -201,7 +201,7 @@
                                 <a href="{{ route('event.details') }}" class="custom-btn">
                             </div>
                             <div class="title col-md-2 text-right">
-                                <a href="#!" class="custom-btn">
+                                <a href="{{ route('event.details') }}" class="custom-btn">
                                     details
                                 </a>
                             </div>
