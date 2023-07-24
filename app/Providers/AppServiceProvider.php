@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Slider;
 use App\Models\University;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
@@ -28,5 +29,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         View::share('universities', University::latest()->get());
+        View::share('sliders', Slider::latest()->get());
     }
 }
