@@ -1194,7 +1194,7 @@ button {
     background-color: transparent;
 }
 .sticky-header-section .header-bottom {
-    padding: 30px 0px;
+    padding: 10px 0px;
 }
 .sticky-header-section .header-bottom .menu-item-list {
     padding: 8px 0px;
@@ -1477,7 +1477,7 @@ button {
 }
 
 .sticky-header-section.stuck {
-    background-color: #333333;
+    background-color: orange;
     -webkit-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.1);
     box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.1);
 }
@@ -3384,7 +3384,7 @@ button {
 .slide-section .main-carousel1 .item .slider-item-content {
     z-index: 1;
     text-align: center;
-    padding: 150px;
+    padding: 130px;
     /* padding-bottom: 300px; */
 }
 .slide-section .main-carousel1 .item .slider-item-content .medium-text {
@@ -3464,7 +3464,7 @@ button {
     transition: all 0.3s ease-in-out;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-.slide-section .owl-theme .owl-dots .owl-dot:after {
+/* .slide-section .owl-theme .owl-dots .owl-dot:after {
     left: 0;
     right: 0;
     opacity: 0;
@@ -3480,7 +3480,7 @@ button {
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: #ffbe30;
-}
+} */
 .slide-section .owl-theme .owl-dots .owl-dot.active {
     font-size: 30px;
 }
@@ -4755,17 +4755,27 @@ button {
 .event-section .tab-content .event-item {
     border-color: #ffbe30 !important;
     padding: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background-color: #ffffff;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     border: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+.event-section .tab-content .event-item .title span{
+    color:#000000;
+    font-weight: 700;
+}
+.event-section .tab-content .event-item:hover{
+    box-shadow: 0px 7px 0px 4px orange;
+    transition-duration: 0.5s;
 }
 .event-section .tab-content .event-item .event-image {
     float: left;
-    width: 250px;
-    height: 250px;
+    width: 75px;
+    height: 65px;
     overflow: hidden;
     position: relative;
     margin-right: 30px;
@@ -4812,7 +4822,7 @@ button {
 .event-section .tab-content .event-item .event-content .event-title {
     position: relative;
 }
-.event-section .tab-content .event-item .event-content .event-title:after {
+/* .event-section .tab-content .event-item .event-content .event-title:after {
     top: 0;
     width: 6px;
     left: -33px;
@@ -4821,7 +4831,7 @@ button {
     height: 100%;
     position: absolute;
     background-color: #ffbe30;
-}
+} */
 .event-section .tab-content .event-item .event-content .event-title .title {
     margin: 0px;
     font-weight: 900;
@@ -11039,7 +11049,7 @@ button {
         padding-top: 98px;
     } */
     .slide-section .main-carousel1 .item .slider-item-content {
-        padding: 100px;
+        padding: 130px;
         padding-bottom: 250px;
     }
     .upcomming-event-section

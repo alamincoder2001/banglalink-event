@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegisterTicket;
 use Illuminate\Http\Request;
 use App\Models\ExampleRegister;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
@@ -11,6 +13,11 @@ class HomeController extends Controller
     public function index()
     {
         return view('website');
+    }
+
+    public function ExampleRegShow()
+    {
+        return view('register');
     }
 
     public function ExampleReg(Request $request)
@@ -43,6 +50,8 @@ class HomeController extends Controller
             $register->university     = $request->university;
             $register->address        = $request->address;
             $register->save();
+
+            // Mail::to($request->email)->send(new RegisterTicket($register));
 
             $notification = array(
                 'message' => 'Register Successfully',

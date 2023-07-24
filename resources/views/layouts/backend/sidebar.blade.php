@@ -36,6 +36,12 @@
                     <span> Register List </span>
                 </a>
             </li>
+            <li class="side-nav-item {{Route::is('admin.university.create') ? 'menuitem-active': ''}}">
+                <a href="{{route('admin.university.create')}}" class="side-nav-link {{Route::is('admin.university.create') ? 'active': ''}}">
+                    <i class="uil-home-alt"></i>
+                    <span> University Entry </span>
+                </a>
+            </li>
             <!-- <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
                     <i class="uil-store"></i>

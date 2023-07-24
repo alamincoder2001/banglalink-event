@@ -19,6 +19,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/assets/css/jquery.mCustomScrollbar.min.css">
 <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/assets/css/calendar.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 <!-- custom css include -->
 <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/assets/css/style.css">
 <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/assets/css/custom.css">
