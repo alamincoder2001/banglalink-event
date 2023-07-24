@@ -122,4 +122,9 @@ class HomeController extends Controller
         $event = Event::find($id);
         return view('event_details', compact('event'));
     }
+
+    public function gallery() 
+    {
+        return view('gallery_page');
+    }
 }
