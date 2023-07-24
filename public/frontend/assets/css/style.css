@@ -1,15 +1,4 @@
-/* table of content - start
-==================================================================================================== */
-/* ==================================================
-* Project Name 	:  Harmoni Event Management
-* Author 		:  jThemes Studio
-* File 			:  Css Base
-* Version 		:  1.0.0
-* Project Start :  20 April 2018
-* Last Change 	:  06 june 2018
-================================================== */
-/* table of content - end
-==================================================================================================== */
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i|Roboto:400,400i,700,700i,900,900i");
 /* fonts load - start
 ==================================================================================================== */
@@ -276,6 +265,7 @@ textarea:focus {
 
 /* customization of unorder list - end
 ================================================== */
+
 /* countdown-timer - style - start
 ================================================== */
 .countdown-timer {
@@ -318,6 +308,7 @@ textarea:focus {
 
 /* countdown-timer - style - end
 ================================================== */
+
 /* pagination setting - start
 ================================================== */
 .pagination {
@@ -402,6 +393,7 @@ textarea:focus {
 
 /* pagination setting - end
 ================================================== */
+
 /* padding - margin setting - start 
 ================================================== */
 .sec-ptb-100 {
@@ -426,6 +418,7 @@ textarea:focus {
 
 /* padding - margin setting - end
 ================================================== */
+
 /* link button - start
 ================================================== */
 .custom-btn {
@@ -12304,3 +12297,28 @@ button {
 /* ====================================================================================================
 6 - media screen and (max-width: 320px) - end
 ==================================================================================================== */
+
+.carousel .carousel-indicators li {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.carousel .carousel-indicators .active {
+    background-color: #fff;
+    border: 5px solid #000;
+}
+
+.carousel .carousel-item img {
+    height: 550px;
+    object-fit: cover;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+}

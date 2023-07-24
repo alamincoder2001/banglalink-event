@@ -332,6 +332,62 @@ h1 {
     height: 470px;
 }
 
-#carouselExampleIndicators .carousel-item img{
-    
+.carousel-inner .carousel-caption {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+}
+
+.carousel-inner .carousel-caption .start-btn {
+    font-weight: 700;
+    padding: 7px 20px;
+    color: #ffffff;
+    border-radius: 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: 3px solid #ffbe30;
+}
+
+.carousel-inner .carousel-caption .start-btn:hover {
+    color: #ffffff;
+    background-color: #ffbe30;
+}
+
+.carousel-inner .carousel-caption h4 {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.carousel-inner .carousel-caption p {
+    color: #fff;
+}
+
+.event_detail .card img {
+    height: 280px;
+    border-bottom: 1px solid #ddd;
+    background: #ffa500;
+}
+
+.event_detail .card .card-body .card-title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.event_detail .card .card-body .date {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.event_detail .card .card-body .time {
+    font-size: 14px;
+    font-weight: 600;
+}
+.event_detail .card .card-body p {
+    text-align: justify;
+    font-size: 14px;
 }

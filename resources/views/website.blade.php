@@ -93,7 +93,8 @@
         </div>
     </div> -->
 </section>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+{{-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -118,11 +119,58 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </button>
+</div> --}}
+
+
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{asset('frontend')}}/assets/images/slider/slider-bg1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block text-white">
+            <h4>AIUB Youth Fest - 2023</h4>
+            <p>every event sould be perfect</p>
+            <a href="" class="about-btn custom-btn">About Us</a>
+            <a href="" class="start-btn">Get Started</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{asset('frontend')}}/assets/images/slider/slider-bg2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block text-white">
+            <h4>AIUB Youth Fest - 2023</h4>
+            <p>every event sould be perfect</p>
+            <a href="" class="about-btn custom-btn">About Us</a>
+            <a href="" class="start-btn">Get Started</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{asset('frontend')}}/assets/images/slider/slider-bg3.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block text-white">
+            <h4>AIUB Youth Fest - 2023</h4>
+            <p>every event sould be perfect</p>
+            <a href="" class="about-btn custom-btn">About Us</a>
+            <a href="" class="start-btn">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </button>
 </div>
-<!-- slide-section - end ================================================== -->
+
+<!-- slide-section - end -->
 
 
-<!-- event-section - start ================================================== -->
+<!-- event-section - start -->
 <section id="event-section" class="event-section pt-2 sec-ptb-100 bg-gray-light clearfix">
     <div class="section-title text-left mb-25">
         <h2 style="background: #ff7b17;padding: 15px 0px;" class="text-white big-title text-center"><strong>Upcoming Events</strong></h2>
@@ -147,7 +195,7 @@
                                 <span>North South University</span>
                                 <span>|</span>
                                 <span>1:00 PM - 5:00 PM</span>
-                                <a href="#!" class="custom-btn">
+                                <a href="{{ route('event.details') }}" class="custom-btn">
                                     details
                                 </a>
                             </div>
@@ -163,7 +211,7 @@
                                 <span>American International University-Bangladesh</span>
                                 <span>|</span>
                                 <span>1:00 PM - 5:00 PM</span>
-                                <a href="#!" class="custom-btn">
+                                <a href="{{ route('event.details') }}" class="custom-btn">
                                     details
                                 </a>
                             </div>
@@ -179,7 +227,7 @@
                                 <span>North South University</span>
                                 <span>|</span>
                                 <span>1:00 PM - 5:00 PM</span>
-                                <a href="#!" class="custom-btn">
+                                <a href="{{ route('event.details') }}" class="custom-btn">
                                     details
                                 </a>
                             </div>
@@ -195,7 +243,7 @@
                                 <span>American International University-Bangladesh</span>
                                 <span>|</span>
                                 <span>1:00 PM - 5:00 PM</span>
-                                <a href="#!" class="custom-btn">
+                                <a href="{{ route('event.details') }}" class="custom-btn">
                                     details
                                 </a>
                             </div>
