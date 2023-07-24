@@ -333,14 +333,16 @@ h1 {
 }
 
 .carousel-inner .carousel-caption {
-    position: absolute;
+    /* position: absolute; */
     bottom: 30%;
-    left: 50%;
-    transform: translate(-50%);
+    /* left: 50%; */
+    /* transform: translate(-50%);
     -webkit-transform: translate(-50%);
     -moz-transform: translate(-50%);
     -ms-transform: translate(-50%);
-    -o-transform: translate(-50%);
+    -o-transform: translate(-50%); */
+    /* text-align: center; */
+    align-items: center;
 }
 
 .carousel-inner .carousel-caption .start-btn {
@@ -362,6 +364,7 @@ h1 {
     color: #fff;
     font-size: 35px;
     font-weight: 600;
+    margin-bottom: 30px;
 }
 .carousel-inner .carousel-caption p {
     color: #fff;
