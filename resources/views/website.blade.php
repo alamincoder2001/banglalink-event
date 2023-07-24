@@ -20,13 +20,13 @@
                             <div class="col-md-12">
                                 <div class="menu-item-list ul-li clearfix">
                                     <ul>
-                                        <li class="menu-item-has-children {{Route::is('website') ? 'active' : ''}}">
-                                            <a href="{{route('website')}}">home</a>
+                                        <li class="menu-item-has-children {{ Route::is('website') ? 'active' : '' }}">
+                                            <a href="{{ route('website') }}">home</a>
                                         </li>
-                                        <li class="menu-item-has-children {{Route::is('example.registershow') ? 'active' : ''}}">
-                                            <a href="{{route('example.registershow')}}">Register</a>
+                                        <li class="menu-item-has-children {{ Route::is('example.registershow') ? 'active' : '' }}">
+                                            <a href="{{ route('example.registershow') }}">Register</a>
                                         </li>
-                                        <li class="menu-item-has-children">
+                                        <li class="menu-item-has-children {{ Route::is('gallery.page') ? 'active' : '' }}">
                                             <a href="{{ route('gallery.page') }}">Gallery</a>
                                         </li>
                                     </ul>
@@ -121,11 +121,23 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme">
+                    @if(count($galleries) > 0)
+                    @foreach($galleries as $key => $item)
+                    <div class="item">
+                        <div class="card">
+                            <img src="{{asset($item->image)}}" class="card-img-top" alt="Participants Bands 1">
+                            <div class="card-body">
+                                <a href="{{route('gallery.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    @else
                     <div class="item">
                         <div class="card">
                             <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands 1">
                             <div class="card-body">
-                                <a href="#" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
+                                <a href="{{route('gallery.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
                         </div>
                     </div>
@@ -133,7 +145,7 @@
                         <div class="card">
                             <img src="{{asset('frontend')}}/assets/images/event/participantsband2.jpg" class="card-img-top" alt="Participants Bands 1">
                             <div class="card-body">
-                                <a href="#" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
+                                <a href="{{route('gallery.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
                         </div>
                     </div>
@@ -141,7 +153,7 @@
                         <div class="card">
                             <img src="{{asset('frontend')}}/assets/images/event/participantsband2.jpg" class="card-img-top" alt="Participants Bands 1">
                             <div class="card-body">
-                                <a href="#" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
+                                <a href="{{route('gallery.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
                         </div>
                     </div>
@@ -149,10 +161,11 @@
                         <div class="card">
                             <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands 1">
                             <div class="card-body">
-                                <a href="#" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
+                                <a href="{{route('gallery.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -170,11 +183,23 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme">
+                    @if(count($participants) > 0)
+                    @foreach($participants as $key => $item)
+                    <div class="item">
+                        <div class="card">
+                            <img src="{{asset($item->image)}}" class="card-img-top" alt="Participants Bands 1">
+                            <div class="card-body">
+                                <a href="{{route('participant.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    @else
                     <div class="item">
                         <div class="card">
                             <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands 1">
                             <div class="card-body">
-                                <a href="#" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
+                                <a href="{{route('participant.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
                         </div>
                     </div>
@@ -182,7 +207,7 @@
                         <div class="card">
                             <img src="{{asset('frontend')}}/assets/images/event/participantsband2.jpg" class="card-img-top" alt="Participants Bands 1">
                             <div class="card-body">
-                                <a href="#" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
+                                <a href="{{route('participant.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
                         </div>
                     </div>
@@ -190,10 +215,19 @@
                         <div class="card">
                             <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands 1">
                             <div class="card-body">
-                                <a href="#" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
+                                <a href="{{route('participant.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
                         </div>
                     </div>
+                    <div class="item">
+                        <div class="card">
+                            <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands 1">
+                            <div class="card-body">
+                                <a href="{{route('participant.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>

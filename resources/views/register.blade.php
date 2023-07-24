@@ -19,14 +19,14 @@
                             <div class="col-md-12">
                                 <div class="menu-item-list ul-li clearfix">
                                     <ul>
-                                        <li class="menu-item-has-children {{Route::is('website') ? 'active' : ''}}">
-                                            <a href="{{route('website')}}">home</a>
+                                        <li class="menu-item-has-children {{ Route::is('website') ? 'active' : '' }}">
+                                            <a href="{{ route('website') }}">home</a>
                                         </li>
-                                        <li class="menu-item-has-children {{Route::is('example.registershow') ? 'active' : ''}}">
-                                            <a href="{{route('example.registershow')}}">Register</a>
+                                        <li class="menu-item-has-children {{ Route::is('example.registershow') ? 'active' : '' }}">
+                                            <a href="{{ route('example.registershow') }}">Register</a>
                                         </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#!">Gallery</a>
+                                        <li class="menu-item-has-children {{ Route::is('gallery.page') ? 'active' : '' }}">
+                                            <a href="{{ route('gallery.page') }}">Gallery</a>
                                         </li>
                                     </ul>
                                 </div>

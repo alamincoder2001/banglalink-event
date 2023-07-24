@@ -55,6 +55,12 @@
                     <span> Gallery Entry </span>
                 </a>
             </li>
+            <li class="side-nav-item {{Route::is('admin.participant.create') ? 'menuitem-active': ''}}">
+                <a href="{{route('admin.participant.create')}}" class="side-nav-link {{Route::is('admin.participant.create') ? 'active': ''}}">
+                    <i class="mdi mdi-folder-image"></i>
+                    <span> Participant Entry </span>
+                </a>
+            </li>
             <li class="side-nav-item {{Route::is('admin.university.create') ? 'menuitem-active': ''}}">
                 <a href="{{route('admin.university.create')}}" class="side-nav-link {{Route::is('admin.university.create') ? 'active': ''}}">
                     <i class="mdi mdi-school"></i>

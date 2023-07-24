@@ -16,7 +16,8 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view("admin.dashboard");
+        $registers = ExampleRegister::all();
+        return view("admin.dashboard", compact('registers'));
     }
 
     public function registerList()

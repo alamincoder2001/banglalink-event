@@ -1,57 +1,35 @@
 @extends('layouts.backend_master')
 
-@section('title', 'Event Create')
-@section('breadcrumbTitle', 'Event Create')
-@section('breadcrumbSubTitle', 'Event Create')
+@section('title', 'Participant Create')
+@section('breadcrumbTitle', 'Participant Create')
+@section('breadcrumbSubTitle', 'Participant Create')
 
 @section('content')
 
 <div class="row">
     <div class="col-md-12">
-        <div class="card event">
+        <div class="card participant">
             <div class="card-body">
                 <form onsubmit="saveData(event)">
                     <input type="hidden" name="id" id="id">
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-8">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-gorup">
-                                        <label for="venue">Venue Name</label>
-                                        <select name="venue" id="venue" class="form-control shadow-none">
-                                            <option value="">Choose venue name</option>
-                                            @foreach($universities as $key => $item)
-                                            <option value="{{$item->name}}">{{$item->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        <span class="text-danger error error-venue"></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="eventDate">Event Date</label>
-                                        <input type="date" id="eventDate" name="eventDate" class="form-control shadow-none">
-                                        <span class="text-danger error error-eventDate"></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="From">From</label>
-                                        <input type="time" id="From" name="From" class="form-control shadow-none">
-                                        <span class="text-danger error error-From"></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="To">To</label>
-                                        <input type="time" id="To" name="To" class="form-control shadow-none">
-                                        <span class="text-danger error error-To"></span>
+                                        <label for="title">Title</label>
+                                            <input type="text" id="title" name="title" class="form-control shadow-none">
+                                        <span class="text-danger error error-title"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-12 mt-2">
-                                    <div class="form-group">
-                                        <label for="description">Short Description</label>
-                                        <textarea name="description" id="description" rows="5" class="form-control shadow"></textarea>
+                                    <div class="form-gorup">
+                                        <label for="type">Type</label>
+                                            <select id="type" name="type" class="form-control shadow-none">
+                                                <option value="image">Image</option>
+                                                <option value="video">Video</option>
+                                            </select>
+                                        <span class="text-danger error error-type"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -63,10 +41,10 @@
                         </div>
                         <div class="col-md-2">
                             <div class="form-group ImageBackground text-center">
-                                <span class="text-danger">(150 X 150)</span>
+                                <span class="text-danger">(1280 X 720)</span>
                                 <img src="{{asset('noimage.jpg')}}" class="imageShow" />
-                                <label for="image">Upload Image</label>
-                                <input type="file" id="image" name="logo" class="form-control shadow-none" onchange="imageUrl(event)" />
+                                <label for="uploadImage">Upload Image</label>
+                                <input type="file" id="uploadImage" name="image" class="form-control shadow-none" onchange="imageUrl(event)" />
                             </div>
                         </div>
                     </div>
@@ -81,9 +59,9 @@
                     <thead>
                         <tr>
                             <th>#ID</th>
-                            <th>Venue Name</th>
-                            <th>Event Date</th>
-                            <th>Description</th>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Image</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -102,7 +80,7 @@
 @push('js')
 <script>
     var table = $('#example').DataTable({
-        ajax: "/admin/get-event",
+        ajax: "/admin/get-participant",
         order: [
             [0, "desc"]
         ],
@@ -110,13 +88,20 @@
                 data: 'id',
             },
             {
-                data: 'venue'
+                data: 'title'
             },
             {
-                data: 'eventDate'
+                data: null,
+                render: data => {
+                    return `<span class='text-uppercase'>${data.type}</span>`;
+                }
             },
             {
-                data: 'description'
+                data: null,
+                render: data => {
+                    return data.type == 'image' ? `<img src="${data.image != null ? '/'+data.image : '/noimage.jpg'}" width="80"/>` : 'Video';
+                    ;
+                }
             },
             {
                 data: null,
@@ -134,23 +119,23 @@
         event.preventDefault();
         let formdata = new FormData(event.target)
         $.ajax({
-            url: "/admin/event",
+            url: "/admin/participant",
             method: "POST",
             processData: false,
             contentType: false,
             data: formdata,
             beforeSend: () => {
-                $(".event").find('form .error').text('');
+                $(".participant").find('form .error').text('');
             },
             success: res => {
                 if (res.status) {
                     $('form').trigger('reset')
-                    $(".event").find('.imageShow').prop('src', '/noimage.jpg');
+                    $(".participant").find('.imageShow').prop('src', '/noimage.jpg');
                     $.notify(res.msg, 'success');
                     table.ajax.reload();
                 } else {
                     $.each(res.msg, (index, value) => {
-                        $(".event").find('form .error-' + index).text(value);
+                        $(".participant").find('form .error-' + index).text(value);
                     })
                 }
             }
@@ -159,13 +144,13 @@
 
     function Edit(id) {
         $.ajax({
-            url: '/admin/get-event/' + id,
+            url: '/admin/get-participant/' + id,
             method: "GET",
             success: res => {
                 $.each(res, (index, value) => {
-                    $(".event").find('form #' + index).val(value);
+                    $(".participant").find('form #' + index).val(value);
                 })
-                $(".event").find('.imageShow').prop('src', res.logo != null ? '/'+res.logo:'/noimage.jpg');
+                $(".participant").find('.imageShow').prop('src', res.image != null ? '/'+res.image:'/noimage.jpg');
             }
         })
     }
@@ -173,7 +158,7 @@
     function Delete(id) {
         if (confirm("Are you sure!")) {
             $.ajax({
-                url: '/admin/delete-event/' + id,
+                url: '/admin/delete-participant/' + id,
                 method: "GET",
                 success: res => {
                     if (res.status) {
@@ -190,10 +175,10 @@
             let img = new Image()
             img.src = window.URL.createObjectURL(event.target.files[0]);
             img.onload = () => {
-                if (img.width === 150 && img.height === 150) {
+                if (img.width === 1280 && img.height === 720) {
                     document.querySelector('.imageShow').src = window.URL.createObjectURL(event.target.files[0]);
                 } else {
-                    alert(`This image ${img.width} X ${img.width} but require image 150px X 150px`);
+                    alert(`This image ${img.width} X ${img.width} but require image 1280px X 720px`);
                 }
             }
         }

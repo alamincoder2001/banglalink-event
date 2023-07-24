@@ -42,6 +42,7 @@
         }
 
         .ImageBackground label {
+            display: block;
             background: #ffb100;
             width: 135px;
             color: white;

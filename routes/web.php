@@ -12,3 +12,4 @@ Route::get('/register-complete/{id}', [HomeController::class, 'registerComplete'
 
 Route::get('/event-details/{id}', [HomeController::class, 'eventDetails'])->name('event.details');
 Route::get('/galleries', [HomeController::class, 'gallery'])->name('gallery.page');
+Route::get('/participants', [HomeController::class, 'participant'])->name('participant.page');

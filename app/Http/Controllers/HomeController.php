@@ -6,6 +6,8 @@ use App\Mail\RegisterTicket;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Models\ExampleRegister;
+use App\Models\Gallery;
+use App\Models\Participating;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
@@ -14,7 +16,9 @@ class HomeController extends Controller
     public function index()
     {
         $events = Event::where('eventDate', '>', date('Y-m-d'))->latest()->get();
-        return view('website', compact('events'));
+        $participants = Participating::latest()->get();
+        $galleries = Gallery::latest()->get();
+        return view('website', compact('events', 'participants', 'galleries'));
     }
 
     public function ExampleRegShow()
@@ -46,7 +50,7 @@ class HomeController extends Controller
             $register                 = new ExampleRegister();
             $register->registrationID = $this->generateCode("ExampleRegister", $rFormat);
             $register->name           = $request->name;
-            $register->slug           = $this->make_slug(date('Y-m') . ' ' . $request->name);
+            $register->slug           = $this->make_slug(date('Y-m-d h:i:s') . ' ' . $request->name);
             $register->phone          = $request->phone;
             $register->email          = $request->email;
             $register->university     = $request->university;
@@ -125,6 +129,11 @@ class HomeController extends Controller
 
     public function gallery() 
     {
-        return view('gallery_page');
+        return view('gallery');
+    }
+
+    public function participant() 
+    {
+        return view('participant');
     }
 }

@@ -18,17 +18,17 @@
                                 <div class="col-md-12">
                                     <div class="form-gorup">
                                         <label for="title">Title</label>
-                                            <input type="text" id="title" name="title" class="form-control shadow-none">
+                                        <input type="text" id="title" name="title" class="form-control shadow-none">
                                         <span class="text-danger error error-title"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-12 mt-2">
                                     <div class="form-gorup">
                                         <label for="type">Type</label>
-                                            <select id="type" name="type" class="form-control shadow-none">
-                                                <option value="image">Image</option>
-                                                <option value="video">Video</option>
-                                            </select>
+                                        <select id="type" name="type" class="form-control shadow-none">
+                                            <option value="image">Image</option>
+                                            <option value="video">Video</option>
+                                        </select>
                                         <span class="text-danger error error-type"></span>
                                     </div>
                                 </div>
@@ -41,10 +41,10 @@
                         </div>
                         <div class="col-md-2">
                             <div class="form-group ImageBackground text-center">
-                                <span class="text-danger">(1024 X 1024)</span>
+                                <span class="text-danger">(1280 X 720)</span>
                                 <img src="{{asset('noimage.jpg')}}" class="imageShow" />
                                 <label for="uploadImage">Upload Image</label>
-                                <input type="file" id="uploadImage" name="image" class="form-control shadow-none" onchange="document.querySelector('.imageShow').src = window.URL.createObjectURL(this.files[0])" />
+                                <input type="file" id="uploadImage" name="image" class="form-control shadow-none" onchange="imageUrl(event)" />
                             </div>
                         </div>
                     </div>
@@ -99,8 +99,7 @@
             {
                 data: null,
                 render: data => {
-                    return data.type == 'image' ? `<img src="${data.image != null ? '/'+data.image : '/noimage.jpg'}" width="80"/>` : 'Video';
-                    ;
+                    return data.type == 'image' ? `<img src="${data.image != null ? '/'+data.image : '/noimage.jpg'}" width="80"/>` : 'Video';;
                 }
             },
             {
@@ -150,7 +149,7 @@
                 $.each(res, (index, value) => {
                     $(".gallery").find('form #' + index).val(value);
                 })
-                $(".gallery").find('.imageShow').prop('src', res.image != null ? '/'+res.image:'/noimage.jpg');
+                $(".gallery").find('.imageShow').prop('src', res.image != null ? '/' + res.image : '/noimage.jpg');
             }
         })
     }
@@ -167,6 +166,20 @@
                     }
                 }
             })
+        }
+    }
+
+    function imageUrl(event) {
+        if (event.target.files[0]) {
+            let img = new Image()
+            img.src = window.URL.createObjectURL(event.target.files[0]);
+            img.onload = () => {
+                if (img.width === 1280 && img.height === 720) {
+                    document.querySelector('.imageShow').src = window.URL.createObjectURL(event.target.files[0]);
+                } else {
+                    alert(`This image ${img.width} X ${img.width} but require image 1280px X 720px`);
+                }
+            }
         }
     }
 </script>

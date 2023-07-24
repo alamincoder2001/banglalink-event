@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\ParticipatingController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UniversityController;
 
@@ -37,6 +38,12 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/get-gallery/{id?}', [GalleryController::class, 'index'])->name('admin.gallery.index');
     Route::post('/gallery', [GalleryController::class, 'store'])->name('admin.gallery.store');
     Route::get('/delete-gallery/{id}', [GalleryController::class, 'destroy'])->name('admin.gallery.destroy');
+    
+    // participant
+    Route::get('/participant', [ParticipatingController::class, 'create'])->name('admin.participant.create');
+    Route::get('/get-participant/{id?}', [ParticipatingController::class, 'index'])->name('admin.participant.index');
+    Route::post('/participant', [ParticipatingController::class, 'store'])->name('admin.participant.store');
+    Route::get('/delete-participant/{id}', [ParticipatingController::class, 'destroy'])->name('admin.participant.destroy');
    
     // event
     Route::get('/event', [EventController::class, 'create'])->name('admin.event.create');
