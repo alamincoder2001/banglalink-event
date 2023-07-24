@@ -55,8 +55,8 @@
             <div class="carousel-caption d-none d-md-block text-white">
                 <h4>{{$item->title}}</h4>
                 <p>{{$item->description}}</p>
-                <a href="" class="about-btn custom-btn">About Us</a>
-                <a href="" class="start-btn">Get Started</a>
+                <a href="{{route('gallery.page')}}" class="about-btn custom-btn">About Us</a>
+                <a href="{{route('example.register')}}" class="start-btn">Get Started</a>
             </div>
         </div>
         @endforeach

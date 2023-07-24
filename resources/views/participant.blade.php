@@ -62,7 +62,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="gallery_head">
-                <h4>Gallery</h4>
+                <h4>Participanting Band</h4>
             </div>
         </div>
 

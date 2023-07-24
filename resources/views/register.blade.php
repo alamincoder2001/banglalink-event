@@ -94,9 +94,10 @@
             </div>
         </div>
 
-        <div class="row d-flex justify-content-center pt-5">
+        <div class="row d-flex justify-content-center mt-5">
             <div class="col-md-5">
-                <h2 class="big-title text-center" style="font-size: 48px;font-weight: 900;">Re Print</h2>
+                <div style="width: 100%;height:5px;background:orange"></div>
+                <h2 class="big-title text-center pt-3" style="font-size: 48px;font-weight: 900;">Re Print Ticket</h2>
                 <div class="contact-form form-wrapper" style="height: 150px;padding:5px; box-shadow:0px 0px 1px 1px #cf32001f;">
                     <form class="reprint" onsubmit="ReprintSubmit(event)">
                         <div class="row">
