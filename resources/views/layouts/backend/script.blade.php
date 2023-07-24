@@ -18,6 +18,8 @@
 <!-- Datatable Demo Aapp js -->
 <script src="{{asset('backend')}}/assets/js/pages/demo.datatable-init.js"></script>
 
+<script src="{{asset('js/notify.js')}}"></script>
+
 <!-- App js -->
 <script src="{{asset('backend')}}/assets/js/app.min.js"></script>
 

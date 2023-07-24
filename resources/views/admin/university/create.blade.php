@@ -93,7 +93,7 @@
             success: res => {
                 if (res.status) {
                     $('form').trigger('reset')
-                    alert(res.msg)
+                    $.notify(res.msg, 'success');
                     table.ajax.reload();
                 } else {
                     $.each(res.msg, (index, value) => {
@@ -123,7 +123,7 @@
                 method: "GET",
                 success: res => {
                     if (res.status) {
-                        alert(res.msg)
+                        $.notify(res.msg, 'success');
                         table.ajax.reload();
                     }
                 }

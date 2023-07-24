@@ -13,7 +13,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $events = Event::latest()->get();
+        $events = Event::where('eventDate', '>', date('Y-m-d'))->latest()->get();
         return view('website', compact('events'));
     }
 
