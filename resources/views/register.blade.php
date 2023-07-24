@@ -95,23 +95,27 @@
         </div>
 
         <div class="row d-flex justify-content-center mt-5">
-            <div class="col-md-5">
+            <div class="col-md-8">
                 <div style="width: 100%;height:5px;background:orange"></div>
-                <h2 class="big-title text-center pt-3" style="font-size: 48px;font-weight: 900;">Re Print Ticket</h2>
-                <div class="contact-form form-wrapper" style="height: 150px;padding:5px; box-shadow:0px 0px 1px 1px #cf32001f;">
-                    <form class="reprint" onsubmit="ReprintSubmit(event)">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="form-item">
-                                    <input type="phone" name="phone" placeholder="Phone Number" autocomplete="off">
-                                    <span class="text-danger phone"></span>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-7 p-md-0">
+                        <h2 class="big-title text-center pt-3" style="font-size: 48px;font-weight: 900;">Re Print Ticket</h2>
+                        <div class="contact-form form-wrapper" style="height: 150px;padding:5px; box-shadow:0px 0px 1px 1px #cf32001f;">
+                            <form class="reprint" onsubmit="ReprintSubmit(event)">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-item">
+                                            <input type="phone" name="phone" placeholder="Phone Number" autocomplete="off">
+                                            <span class="text-danger phone"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 text-right">
+                                        <button type="submit" class="custom-btn">Reprint</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-12 text-right">
-                                <button type="submit" class="custom-btn">Reprint</button>
-                            </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
