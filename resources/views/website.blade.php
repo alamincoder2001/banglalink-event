@@ -60,24 +60,6 @@
             </div>
         </div>
         @endforeach
-        <!-- <div class="carousel-item">
-            <img src="{{asset('frontend')}}/assets/images/slider/slider-bg2.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block text-white">
-                <h4>AIUB Youth Fest - 2023</h4>
-                <p>every event sould be perfect</p>
-                <a href="" class="about-btn custom-btn">About Us</a>
-                <a href="" class="start-btn">Get Started</a>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="{{asset('frontend')}}/assets/images/slider/slider-bg3.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block text-white">
-                <h4>AIUB Youth Fest - 2023</h4>
-                <p>every event sould be perfect</p>
-                <a href="" class="about-btn custom-btn">About Us</a>
-                <a href="" class="start-btn">Get Started</a>
-            </div>
-        </div> -->
     </div>
     <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -88,7 +70,6 @@
         <span class="sr-only">Next</span>
     </button>
 </div>
-
 <!-- slide-section - end -->
 
 
