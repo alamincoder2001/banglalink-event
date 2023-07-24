@@ -42,128 +42,50 @@
 <!-- header-section - end ================================================== -->
 
 <!-- slide-section - start ================================================== -->
-<section id="slide-section" class="clearfix">
-    <!-- <div id="main-carousel1" class="owl-carousel">
-        <div class="item" style="background-image: url({{asset('frontend')}}/assets/images/slider/slider-bg1.jpg);">
-            <div class="overlay-black">
-                <div class="container">
-                    <div class="slider-item-content">
-                        <h1 class="big-text">Banglalink Youth Fest - 2023</h1>
-                        <small class="small-text">every event sould be perfect</small>
-
-                        <div class="link-groups">
-                            <a href="about.html" class="about-btn custom-btn">about us</a>
-                            <a href="#!" class="start-btn">get started!</a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item" style="background-image: url({{asset('frontend')}}/assets/images/slider/slider-bg2.jpg);">
-            <div class="overlay-black">
-                <div class="container">
-                    <div class="slider-item-content">
-                        <h1 class="big-text">AIUB Youth Fest - 2023</h1>
-                        <small class="small-text">every event sould be perfect</small>
-
-                        <div class="link-groups">
-                            <a href="about.html" class="about-btn custom-btn">about us</a>
-                            <a href="#!" class="start-btn">get started!</a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item" style="background-image: url({{asset('frontend')}}/assets/images/slider/slider-bg3.jpg);">
-            <div class="overlay-black">
-                <div class="container">
-                    <div class="slider-item-content">
-                        <h1 class="big-text">NSU Youth Fest - 2023</h1>
-                        <small class="small-text">every event sould be perfect</small>
-                        <div class="link-groups">
-                            <a href="about.html" class="about-btn custom-btn">About us</a>
-                            <a href="#!" class="start-btn">get started!</a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-</section>
-
-{{-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
     <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        @foreach($sliders as $key => $item)
+        <li data-target="#carouselExampleCaptions" data-slide-to="{{$key}}" class="{{$key == 0 ? 'active' : ''}}"></li>
+        @endforeach
     </ol>
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{{asset('frontend')}}/assets/images/slider/slider-bg1.jpg" class="d-block w-100" alt="...">
+        @foreach($sliders as $key => $item)
+        <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
+            <img src="{{asset($item->image)}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-white">
+                <h4>{{$item->title}}</h4>
+                <p>{{$item->description}}</p>
+                <a href="" class="about-btn custom-btn">About Us</a>
+                <a href="" class="start-btn">Get Started</a>
+            </div>
         </div>
-        <div class="carousel-item">
+        @endforeach
+        <!-- <div class="carousel-item">
             <img src="{{asset('frontend')}}/assets/images/slider/slider-bg2.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-white">
+                <h4>AIUB Youth Fest - 2023</h4>
+                <p>every event sould be perfect</p>
+                <a href="" class="about-btn custom-btn">About Us</a>
+                <a href="" class="start-btn">Get Started</a>
+            </div>
         </div>
         <div class="carousel-item">
             <img src="{{asset('frontend')}}/assets/images/slider/slider-bg3.jpg" class="d-block w-100" alt="...">
-        </div>
+            <div class="carousel-caption d-none d-md-block text-white">
+                <h4>AIUB Youth Fest - 2023</h4>
+                <p>every event sould be perfect</p>
+                <a href="" class="about-btn custom-btn">About Us</a>
+                <a href="" class="start-btn">Get Started</a>
+            </div>
+        </div> -->
     </div>
-    <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+    <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+    <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
-    </button>
-</div> --}}
-
-
-<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{{asset('frontend')}}/assets/images/slider/slider-bg1.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block text-white">
-            <h4>AIUB Youth Fest - 2023</h4>
-            <p>every event sould be perfect</p>
-            <a href="" class="about-btn custom-btn">About Us</a>
-            <a href="" class="start-btn">Get Started</a>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="{{asset('frontend')}}/assets/images/slider/slider-bg2.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block text-white">
-            <h4>AIUB Youth Fest - 2023</h4>
-            <p>every event sould be perfect</p>
-            <a href="" class="about-btn custom-btn">About Us</a>
-            <a href="" class="start-btn">Get Started</a>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="{{asset('frontend')}}/assets/images/slider/slider-bg3.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block text-white">
-            <h4>AIUB Youth Fest - 2023</h4>
-            <p>every event sould be perfect</p>
-            <a href="" class="about-btn custom-btn">About Us</a>
-            <a href="" class="start-btn">Get Started</a>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
     </button>
 </div>
 
@@ -176,80 +98,35 @@
         <h2 style="background: #ff7b17;padding: 15px 0px;" class="text-white big-title text-center"><strong>Upcoming Events</strong></h2>
     </div>
     <div class="container">
-        <!-- <div class="mb-25">
-            <div class="row">
-                <div class="col-md-12 p-md-0">
-                </div>
-            </div>
-        </div> -->
         <div class="tab-content">
             <div id="conference-event" class="tab-pane fade active show">
                 <div class="row">
+                    @foreach($events as $key => $item)
                     <div class="col-md-12">
                         <div class="row event-item d-flex align-items-center">
                             <div class="col-md-1">
-                                <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset('frontend')}}/assets/images/event/nsu.png" alt="Image_not_found">
+                                <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset($item->logo)}}" alt="Image_not_found">
                             </div>
-                            <div class="title col-md-2">
-                                <span>Sun 18/06/2023</span>
+                            <div class="title col-md-2 p-md-0">
+                                <span>{{\Carbon\Carbon::parse($item->eventDate)->format('D')}} {{ date("d/m/Y", strtotime($item->eventDate))}}</span>
                             </div>
-                            <div class="title col-md-5">
-                                <span>North South University</span>
+                            <div class="title col-md-5 p-md-0">
+                                <span>{{$item->venue}}</span>
                             </div>
-                            <div class="title col-md-2">
-                                <span>1:00 PM - 5:00 PM</span>
-                                <a href="{{ route('event.details') }}" class="custom-btn">
+                            <div class="title col-md-2 p-md-0 text-uppercase">
+                                <span>{{date("h:i a", strtotime($item->From))}} - {{date("h:i a", strtotime($item->To))}}</span>
                             </div>
                             <div class="title col-md-2 text-right">
-                                <a href="#!" class="custom-btn">
-                                    details
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="row event-item d-flex align-items-center">
-                            <div class="col-md-1">
-                                <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset('frontend')}}/assets/images/event/nsu.png" alt="Image_not_found">
-                            </div>
-                            <div class="title col-md-2">
-                                <span>Sun 18/06/2023</span>
-                            </div>
-                            <div class="title col-md-5">
-                                <span>American International University-Bangladesh</span>
-                            </div>
-                            <div class="title col-md-2">
-                                <span>1:00 PM - 5:00 PM</span>
                                 <a href="{{ route('event.details') }}" class="custom-btn">
                                     details
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="row event-item d-flex align-items-center">
-                            <div class="col-md-1">
-                                <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset('frontend')}}/assets/images/event/nsu.png" alt="Image_not_found">
-                            </div>
-                            <div class="title col-md-2">
-                                <span>Sun 18/06/2023</span>
-                            </div>
-                            <div class="title col-md-5">
-                                <span>North South University</span>
-                            </div>
-                            <div class="title col-md-2">
-                                <span>1:00 PM - 5:00 PM</span>
-                                <a href="{{ route('event.details') }}" class="custom-btn">
-                                    details
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    </div>
-    </div>
     </div>
 </section>
 <!-- event-section - end ================================================== -->

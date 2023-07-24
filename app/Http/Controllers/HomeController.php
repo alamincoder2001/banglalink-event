@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\RegisterTicket;
+use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Models\ExampleRegister;
 use Illuminate\Support\Facades\Mail;
@@ -12,7 +13,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('website');
+        $events = Event::latest()->get();
+        return view('website', compact('events'));
     }
 
     public function ExampleRegShow()
