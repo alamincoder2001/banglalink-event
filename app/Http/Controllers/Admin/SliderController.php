@@ -20,7 +20,6 @@ class SliderController extends Controller
         if (!empty($id)) {
             return Slider::find($id);
         }else{
-            // $data = DB::select('SELECT e.* FROM events e WHERE e.deleted_at IS NULL ORDER BY date(e.dateTime) ASC');
             $data = Slider::latest()->get();
             return response()->json(['data' => $data]);
         }
