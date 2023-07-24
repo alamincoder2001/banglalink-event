@@ -2,10 +2,10 @@
     <!-- Brand Logo Light -->
     <a href="{{route('admin.dashboard')}}" class="logo logo-light">
         <span class="logo-lg">
-            <img src="{{asset('frontend')}}/assets/images/banglalink.png" alt="logo" style="width: 100%;height:50px;">
+            <img src="{{asset('frontend')}}/assets/images/banglalink.jpg" alt="logo" style="width: 100%;height:50px;">
         </span>
         <span class="logo-sm">
-            <img src="{{asset('frontend')}}/assets/images/banglalink.png" alt="small logo" style="width: 100%;height:50px;">
+            <img src="{{asset('frontend')}}/assets/images/banglalink.jpg" alt="small logo" style="width: 100%;height:50px;">
         </span>
     </a>
 
@@ -47,6 +47,12 @@
                 <a href="{{route('admin.slider.create')}}" class="side-nav-link {{Route::is('admin.slider.create') ? 'active': ''}}">
                     <i class="ri-slideshow-2-line"></i>
                     <span> Slider Entry </span>
+                </a>
+            </li>
+            <li class="side-nav-item {{Route::is('admin.gallery.create') ? 'menuitem-active': ''}}">
+                <a href="{{route('admin.gallery.create')}}" class="side-nav-link {{Route::is('admin.gallery.create') ? 'active': ''}}">
+                    <i class="mdi mdi-folder-image"></i>
+                    <span> Gallery Entry </span>
                 </a>
             </li>
             <li class="side-nav-item {{Route::is('admin.university.create') ? 'menuitem-active': ''}}">

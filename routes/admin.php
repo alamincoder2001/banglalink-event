@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UniversityController;
 
@@ -30,6 +31,12 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/get-slider/{id?}', [SliderController::class, 'index'])->name('admin.slider.index');
     Route::post('/slider', [SliderController::class, 'store'])->name('admin.slider.store');
     Route::get('/delete-slider/{id}', [SliderController::class, 'destroy'])->name('admin.slider.destroy');
+    
+    // gallery
+    Route::get('/gallery', [GalleryController::class, 'create'])->name('admin.gallery.create');
+    Route::get('/get-gallery/{id?}', [GalleryController::class, 'index'])->name('admin.gallery.index');
+    Route::post('/gallery', [GalleryController::class, 'store'])->name('admin.gallery.store');
+    Route::get('/delete-gallery/{id}', [GalleryController::class, 'destroy'])->name('admin.gallery.destroy');
    
     // event
     Route::get('/event', [EventController::class, 'create'])->name('admin.event.create');

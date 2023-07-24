@@ -41,7 +41,7 @@
                             <!-- site-logo-wrapper - start -->
                             <div class="site-logo-wrapper mb-30">
                                 <a href="index-1.html" class="logo">
-                                    <img style="width: 100px;background: white;" src="{{asset('frontend')}}/assets/images/logo.png" alt="logo_not_found">
+                                    <img style="width: 100px;" src="{{asset('frontend')}}/assets/images/logo.png" alt="logo_not_found">
                                 </a>
                             </div>
                             <!-- site-logo-wrapper - end -->

@@ -1,14 +1,14 @@
 @extends('layouts.backend_master')
 
-@section('title', 'Slider Create')
-@section('breadcrumbTitle', 'Slider Create')
-@section('breadcrumbSubTitle', 'Slider Create')
+@section('title', 'Gallery Create')
+@section('breadcrumbTitle', 'Gallery Create')
+@section('breadcrumbSubTitle', 'Gallery Create')
 
 @section('content')
 
 <div class="row">
     <div class="col-md-12">
-        <div class="card slider">
+        <div class="card gallery">
             <div class="card-body">
                 <form onsubmit="saveData(event)">
                     <input type="hidden" name="id" id="id">
@@ -23,9 +23,13 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 mt-2">
-                                    <div class="form-group">
-                                        <label for="description">Short Description</label>
-                                        <textarea name="description" id="description" class="form-control shadow-none"></textarea>
+                                    <div class="form-gorup">
+                                        <label for="type">Type</label>
+                                            <select id="type" name="type" class="form-control shadow-none">
+                                                <option value="image">Image</option>
+                                                <option value="video">Video</option>
+                                            </select>
+                                        <span class="text-danger error error-type"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -37,7 +41,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="form-group ImageBackground text-center">
-                                <span class="text-danger">(1920 X 1280)</span>
+                                <span class="text-danger">(1024 X 1024)</span>
                                 <img src="{{asset('noimage.jpg')}}" class="imageShow" />
                                 <label for="uploadImage">Upload Image</label>
                                 <input type="file" id="uploadImage" name="image" class="form-control shadow-none" onchange="document.querySelector('.imageShow').src = window.URL.createObjectURL(this.files[0])" />
@@ -56,6 +60,7 @@
                         <tr>
                             <th>#ID</th>
                             <th>Title</th>
+                            <th>Type</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
@@ -75,7 +80,7 @@
 @push('js')
 <script>
     var table = $('#example').DataTable({
-        ajax: "/admin/get-slider",
+        ajax: "/admin/get-gallery",
         order: [
             [0, "desc"]
         ],
@@ -88,7 +93,14 @@
             {
                 data: null,
                 render: data => {
-                    return `<img src="${data.image != null ? '/'+data.image : '/noimage.jpg'}" width="80"/>`;
+                    return `<span class='text-uppercase'>${data.type}</span>`;
+                }
+            },
+            {
+                data: null,
+                render: data => {
+                    return data.type == 'image' ? `<img src="${data.image != null ? '/'+data.image : '/noimage.jpg'}" width="80"/>` : 'Video';
+                    ;
                 }
             },
             {
@@ -107,23 +119,23 @@
         event.preventDefault();
         let formdata = new FormData(event.target)
         $.ajax({
-            url: "/admin/slider",
+            url: "/admin/gallery",
             method: "POST",
             processData: false,
             contentType: false,
             data: formdata,
             beforeSend: () => {
-                $(".slider").find('form .error').text('');
+                $(".gallery").find('form .error').text('');
             },
             success: res => {
                 if (res.status) {
                     $('form').trigger('reset')
-                    $(".slider").find('.imageShow').prop('src', '/noimage.jpg');
+                    $(".gallery").find('.imageShow').prop('src', '/noimage.jpg');
                     $.notify(res.msg, 'success');
                     table.ajax.reload();
                 } else {
                     $.each(res.msg, (index, value) => {
-                        $(".slider").find('form .error-' + index).text(value);
+                        $(".gallery").find('form .error-' + index).text(value);
                     })
                 }
             }
@@ -132,13 +144,13 @@
 
     function Edit(id) {
         $.ajax({
-            url: '/admin/get-slider/' + id,
+            url: '/admin/get-gallery/' + id,
             method: "GET",
             success: res => {
                 $.each(res, (index, value) => {
-                    $(".slider").find('form #' + index).val(value);
+                    $(".gallery").find('form #' + index).val(value);
                 })
-                $(".slider").find('.imageShow').prop('src', res.image != null ? '/'+res.image:'/noimage.jpg');
+                $(".gallery").find('.imageShow').prop('src', res.image != null ? '/'+res.image:'/noimage.jpg');
             }
         })
     }
@@ -146,7 +158,7 @@
     function Delete(id) {
         if (confirm("Are you sure!")) {
             $.ajax({
-                url: '/admin/delete-slider/' + id,
+                url: '/admin/delete-gallery/' + id,
                 method: "GET",
                 success: res => {
                     if (res.status) {

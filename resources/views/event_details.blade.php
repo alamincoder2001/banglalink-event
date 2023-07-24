@@ -47,13 +47,13 @@
         <div class="row">
             <div class="col-md-4 offset-md-4">
                 <div class="card">
-                    <img src="{{asset('frontend')}}/assets/images/event/nsu.png" class="w-100" alt="...">
+                    <img src="{{asset($event->logo)}}" class="w-100" alt="...">
                     <div class="card-body text-center">
-                      <h5 class="card-title">North South University</h5>
-                      <h5 class="date">Sun 18/06/2023</h5>
-                      <h5 class="time">1:00 PM - 5:00 PM</h5>
+                      <h5 class="card-title">{{$event->venue}}</h5>
+                      <h5 class="date">{{\Carbon\Carbon::parse($event->eventDate)->format('D')}} {{ date("d/m/Y", strtotime($event->eventDate))}}</h5>
+                      <h5 class="time">{{date("h:i a", strtotime($event->From))}} - {{date("h:i a", strtotime($event->To))}}</h5>
 
-                      <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p>{{$event->description}}</p>
                     </div>
                 </div>
             </div>

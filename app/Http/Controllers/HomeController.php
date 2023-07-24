@@ -117,8 +117,9 @@ class HomeController extends Controller
         }
     }
 
-    public function eventDetails() 
+    public function eventDetails($id) 
     {
-        return view('event_details');
+        $event = Event::find($id);
+        return view('event_details', compact('event'));
     }
 }

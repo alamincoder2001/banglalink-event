@@ -98,45 +98,7 @@
                                 <span>{{date("h:i a", strtotime($item->From))}} - {{date("h:i a", strtotime($item->To))}}</span>
                             </div>
                             <div class="title col-md-2 text-right">
-                                <a href="{{ route('event.details') }}" class="custom-btn">
-                                    details
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="row event-item d-flex align-items-center">
-                            <div class="col-md-1">
-                                <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset('frontend')}}/assets/images/event/nsu.png" alt="Image_not_found">
-                            </div>
-                            <div class="title col-md-2">
-                                <span>Sun 18/06/2023</span>
-                            </div>
-                            <div class="title col-md-5">
-                                <span>American International University-Bangladesh</span>
-                            </div>
-                            <div class="title col-md-2">
-                                <span>1:00 PM - 5:00 PM</span>
-                                <a href="{{ route('event.details') }}" class="custom-btn">
-                                    details
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="row event-item d-flex align-items-center">
-                            <div class="col-md-1">
-                                <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset('frontend')}}/assets/images/event/nsu.png" alt="Image_not_found">
-                            </div>
-                            <div class="title col-md-2">
-                                <span>Sun 18/06/2023</span>
-                            </div>
-                            <div class="title col-md-5">
-                                <span>North South University</span>
-                            </div>
-                            <div class="title col-md-2">
-                                <span>1:00 PM - 5:00 PM</span>
-                                <a href="{{ route('event.details') }}" class="custom-btn">
+                                <a href="{{ route('event.details', $item->id) }}" class="custom-btn">
                                     details
                                 </a>
                             </div>

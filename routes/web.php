@@ -10,4 +10,4 @@ Route::post('register', [HomeController::class, 'ExampleReg'])->name('example.re
 Route::post('/re-print', [HomeController::class, 'rePrint'])->name('reprint');
 Route::get('/register-complete/{id}', [HomeController::class, 'registerComplete'])->name('register.complete');
 
-Route::get('/conference-event/details', [HomeController::class, 'eventDetails'])->name('event.details');
+Route::get('/event-details/{id}', [HomeController::class, 'eventDetails'])->name('event.details');
