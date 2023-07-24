@@ -41,7 +41,7 @@
                                                 class="menu-item-has-children {{ Route::is('example.registershow') ? 'active' : '' }}">
                                                 <a href="{{ route('example.registershow') }}">Register</a>
                                             </li>
-                                            <li class="menu-item-has-children">
+                                            <li class="menu-item-has-children {{ Route::is('gallery.page') ? 'active' : '' }}">
                                                 <a href="{{ route('gallery.page') }}">Gallery</a>
                                             </li>
                                         </ul>
