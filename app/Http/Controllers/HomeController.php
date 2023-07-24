@@ -121,4 +121,9 @@ class HomeController extends Controller
     {
         return view('event_details');
     }
+
+    public function gallery() 
+    {
+        return view('gallery_page');
+    }
 }

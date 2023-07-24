@@ -27,7 +27,7 @@
                                             <a href="{{route('example.registershow')}}">Register</a>
                                         </li>
                                         <li class="menu-item-has-children">
-                                            <a href="#!">Gallery</a>
+                                            <a href="{{ route('gallery.page') }}">Gallery</a>
                                         </li>
                                     </ul>
                                 </div>

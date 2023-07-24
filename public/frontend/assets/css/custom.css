@@ -394,3 +394,10 @@ h1 {
     text-align: justify;
     font-size: 14px;
 }
+
+/* Gallery Css */
+.gallery_sec .gallery_head h4 {
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #ffa500;
+}
