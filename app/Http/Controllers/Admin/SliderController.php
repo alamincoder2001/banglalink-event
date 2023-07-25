@@ -76,4 +76,15 @@ class SliderController extends Controller
         $notification = ['status' => true, 'msg' => 'Slider delete successfully'];
         return response()->json($notification);
     }
+
+    public function status(Request $request)
+    {
+        Slider::where('id', $request->id)->update(['status'=>$request->status == 1 ? 0 : 1]);
+        if ($request->status == 1) {
+            $notification = ['status' => true, 'msg' => 'Tittle hide successfully'];
+        }else{
+            $notification = ['status' => true, 'msg' => 'Tittle show successfully'];
+        }
+        return response()->json($notification);
+    }
 }

@@ -18,7 +18,7 @@
                                 <div class="col-md-12">
                                     <div class="form-gorup">
                                         <label for="title">Title</label>
-                                            <input type="text" id="title" name="title" class="form-control shadow-none">
+                                        <input type="text" id="title" name="title" class="form-control shadow-none">
                                         <span class="text-danger error error-title"></span>
                                     </div>
                                 </div>
@@ -57,6 +57,7 @@
                             <th>#ID</th>
                             <th>Title</th>
                             <th>Image</th>
+                            <th>Off/On</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -89,6 +90,12 @@
                 data: null,
                 render: data => {
                     return `<img src="${data.image != null ? '/'+data.image : '/noimage.jpg'}" width="80"/>`;
+                }
+            },
+            {
+                data: null,
+                render: data => {
+                    return `<input class="form-check-input" style="width:35px;height:30px;" onclick="OFFON(${data.id}, ${data.status})" type="checkbox" data-toggle="toggle" data-style="mr-1" ${data.status == 1 ? 'checked': ''}>`;
                 }
             },
             {
@@ -138,7 +145,7 @@
                 $.each(res, (index, value) => {
                     $(".slider").find('form #' + index).val(value);
                 })
-                $(".slider").find('.imageShow').prop('src', res.image != null ? '/'+res.image:'/noimage.jpg');
+                $(".slider").find('.imageShow').prop('src', res.image != null ? '/' + res.image : '/noimage.jpg');
             }
         })
     }
@@ -170,6 +177,20 @@
             //     }
             // }
         }
+    }
+
+    function OFFON(id, status) {
+        $.ajax({
+            url: '/admin/status-change-slider',
+            method: "POST",
+            data: {id: id, status:status},
+            success: res => {
+                if (res.status) {
+                    $.notify(res.msg, 'success');
+                    table.ajax.reload();
+                }
+            }
+        })
     }
 </script>
 @endpush

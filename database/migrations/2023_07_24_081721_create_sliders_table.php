@@ -18,6 +18,7 @@ class CreateSlidersTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('image')->nullable();
+            $table->integer('status')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });

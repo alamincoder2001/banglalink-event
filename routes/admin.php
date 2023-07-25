@@ -32,6 +32,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/get-slider/{id?}', [SliderController::class, 'index'])->name('admin.slider.index');
     Route::post('/slider', [SliderController::class, 'store'])->name('admin.slider.store');
     Route::get('/delete-slider/{id}', [SliderController::class, 'destroy'])->name('admin.slider.destroy');
+    Route::post('/status-change-slider', [SliderController::class, 'status'])->name('admin.slider.status');
     
     // gallery
     Route::get('/gallery', [GalleryController::class, 'create'])->name('admin.gallery.create');
