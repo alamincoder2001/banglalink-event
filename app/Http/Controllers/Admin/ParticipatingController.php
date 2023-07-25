@@ -47,8 +47,9 @@ class ParticipatingController extends Controller
                 $data = new Participating();
             }
 
-            $data->title       = $request->title;
-            $data->type       = $request->type;
+            $data->title = $request->title;
+            $data->type  = $request->type;
+            $data->url   = $request->url;
             if ($request->hasFile('image')) {
                 if (isset($old)) {
                     if (File::exists($old)) {

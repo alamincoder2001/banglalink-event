@@ -15,7 +15,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $events = Event::where('eventDate', '>', date('Y-m-d'))->latest()->get();
+        $events = Event::latest()->get();
+        // $events = Event::where('eventDate', '>', date('Y-m-d'))->latest()->get();
         $participants = Participating::latest()->get();
         $galleries = Gallery::latest()->get();
         return view('website', compact('events', 'participants', 'galleries'));

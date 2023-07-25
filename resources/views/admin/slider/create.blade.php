@@ -37,7 +37,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="form-group ImageBackground text-center">
-                                <span class="text-danger">(1920 X 1280)</span>
+                                <!-- <span class="text-danger">(1920 X 1280)</span> -->
                                 <img src="{{asset('noimage.jpg')}}" class="imageShow" />
                                 <label for="uploadImage">Upload Image</label>
                                 <input type="file" id="uploadImage" name="image" class="form-control shadow-none" onchange="imageUrl(event)" />
@@ -162,13 +162,13 @@
         if (event.target.files[0]) {
             let img = new Image()
             img.src = window.URL.createObjectURL(event.target.files[0]);
-            img.onload = () => {
-                if (img.width === 1920 && img.height === 1280) {
-                    document.querySelector('.imageShow').src = window.URL.createObjectURL(event.target.files[0]);
-                } else {
-                    alert(`This image ${img.width} X ${img.width} but require image 1920px X 1280px`);
-                }
-            }
+            document.querySelector('.imageShow').src = window.URL.createObjectURL(event.target.files[0]);
+            // img.onload = () => {
+            //     if (img.width === 1920 && img.height === 1280) {
+            //     } else {
+            //         alert(`This image ${img.width} X ${img.width} but require image 1920px X 1280px`);
+            //     }
+            // }
         }
     }
 </script>

@@ -16,8 +16,9 @@ class CreateParticipatingsTable extends Migration
         Schema::create('participatings', function (Blueprint $table) {
             $table->id(); 
             $table->string('title');
-            $table->string('image');
             $table->string('type');
+            $table->text('url')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -15,6 +15,7 @@
                         <tr>
                             <th>Sl</th>
                             <th>Register Code</th>
+                            <th>University</th>
                             <th>Name</th>
                             <th>Mobile</th>
                             <th>Email</th>
@@ -29,9 +30,10 @@
                         <tr>
                             <td>{{$key + 1}}</td>
                             <td>{{$item->registrationID}}</td>
+                            <td>{{$item->university}}</td>
                             <td>{{$item->name}}</td>
-                            <td>{{$item->email}}</td>
                             <td>{{$item->phone}}</td>
+                            <td>{{$item->email}}</td>
                             <td>{{$item->address}}</td>
                             <td>
                                 <a class="btn btn-danger btn-sm" href="{{route('admin.registerdestroy', $item->id)}}" onclick="registerDelete(event)">Delete</a>

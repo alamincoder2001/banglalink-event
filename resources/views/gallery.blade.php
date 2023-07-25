@@ -88,12 +88,18 @@
         <div class="row">
             @if(count($galleries) > 0)
             @foreach($galleries as $key => $item)
+            @if($item->type == 'video')
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <iframe src="{{$item->url}}" width="100%" height="100%" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            </div>
+            @else
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#" data-image-id="{{$key}}" data-toggle="modal" data-title="{{$item->title}}" data-image="{{asset($item->image)}}" data-target="#image-gallery">
                     <img class="img-thumbnail" src="{{asset($item->image)}}" alt="Another alt text">
                 </a>
                 <h5 class="m-0">{{$item->title}}</h5>
             </div>
+            @endif
             @endforeach
             @else
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
@@ -296,7 +302,7 @@
                 default:
                     return; // exit this handler for other keys
             }
-            e.preventDefault(); 
+            e.preventDefault();
         });
 </script>
 

@@ -18,18 +18,25 @@
                                 <div class="col-md-12">
                                     <div class="form-gorup">
                                         <label for="title">Title</label>
-                                            <input type="text" id="title" name="title" class="form-control shadow-none">
+                                        <input type="text" id="title" name="title" class="form-control shadow-none">
                                         <span class="text-danger error error-title"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-12 mt-2">
                                     <div class="form-gorup">
                                         <label for="type">Type</label>
-                                            <select id="type" name="type" class="form-control shadow-none">
-                                                <option value="image">Image</option>
-                                                <option value="video">Video</option>
-                                            </select>
+                                        <select id="type" onchange="VideoURLShow(event)" name="type" class="form-control shadow-none">
+                                            <option value="image">Image</option>
+                                            <option value="video">Video</option>
+                                        </select>
                                         <span class="text-danger error error-type"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mt-2 d-none video">
+                                    <div class="form-gorup">
+                                        <label for="url">Video URL</label>
+                                        <input type="text" id="url" name="url" class="form-control shadow-none" autocomplete="off" />
+                                        <span class="text-danger error error-url"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -39,9 +46,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 imageHide">
                             <div class="form-group ImageBackground text-center">
-                                <span class="text-danger">(1280 X 720)</span>
+                                <!-- <span class="text-danger">(1280 X 720)</span> -->
                                 <img src="{{asset('noimage.jpg')}}" class="imageShow" />
                                 <label for="uploadImage">Upload Image</label>
                                 <input type="file" id="uploadImage" name="image" class="form-control shadow-none" onchange="imageUrl(event)" />
@@ -60,6 +67,7 @@
                         <tr>
                             <th>#ID</th>
                             <th>Title</th>
+                            <th>URL</th>
                             <th>Type</th>
                             <th>Image</th>
                             <th>Action</th>
@@ -93,14 +101,19 @@
             {
                 data: null,
                 render: data => {
+                    return data.type == 'video' ? data.url : 'N/A';
+                }
+            },
+            {
+                data: null,
+                render: data => {
                     return `<span class='text-uppercase'>${data.type}</span>`;
                 }
             },
             {
                 data: null,
                 render: data => {
-                    return data.type == 'image' ? `<img src="${data.image != null ? '/'+data.image : '/noimage.jpg'}" width="80"/>` : 'Video';
-                    ;
+                    return data.type == 'image' ? `<img src="${data.image != null ? '/'+data.image : '/noimage.jpg'}" width="80"/>` : 'N/A';;
                 }
             },
             {
@@ -150,7 +163,14 @@
                 $.each(res, (index, value) => {
                     $(".participant").find('form #' + index).val(value);
                 })
-                $(".participant").find('.imageShow').prop('src', res.image != null ? '/'+res.image:'/noimage.jpg');
+                $(".participant").find('.imageShow').prop('src', res.image != null ? '/' + res.image : '/noimage.jpg');
+                if (res.type == 'video') {
+                    $(".video").removeClass('d-none')
+                    $(".imageHide").addClass('d-none')
+                } else {
+                    $(".video").addClass('d-none')
+                    $(".imageHide").removeClass('d-none')
+                }
             }
         })
     }
@@ -174,13 +194,23 @@
         if (event.target.files[0]) {
             let img = new Image()
             img.src = window.URL.createObjectURL(event.target.files[0]);
-            img.onload = () => {
-                if (img.width === 1280 && img.height === 720) {
-                    document.querySelector('.imageShow').src = window.URL.createObjectURL(event.target.files[0]);
-                } else {
-                    alert(`This image ${img.width} X ${img.width} but require image 1280px X 720px`);
-                }
-            }
+            document.querySelector('.imageShow').src = window.URL.createObjectURL(event.target.files[0]);
+            // img.onload = () => {
+            //     if (img.width === 1280 && img.height === 720) {
+            //     } else {
+            //         alert(`This image ${img.width} X ${img.width} but require image 1280px X 720px`);
+            //     }
+            // }
+        }
+    }
+
+    function VideoURLShow(event) {
+        if (event.target.value == 'video') {
+            $(".video").removeClass('d-none')
+            $(".imageHide").addClass('d-none')
+        } else {
+            $(".video").addClass('d-none')
+            $(".imageHide").removeClass('d-none')
         }
     }
 </script>

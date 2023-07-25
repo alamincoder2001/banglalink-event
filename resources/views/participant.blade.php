@@ -69,11 +69,17 @@
         <div class="row">
             @if(count($participants) > 0)
             @foreach($participants as $key => $item)
+            @if($item->type == 'video')
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <iframe src="{{$item->url}}" width="100%" height="100%" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            </div>
+            @else
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#" data-image-id="{{$key}}" data-toggle="modal" data-title="" data-image="{{asset($item->image)}}" data-target="#image-gallery">
                     <img class="img-thumbnail" src="{{asset($item->image)}}" alt="Another alt text">
                 </a>
             </div>
+            @endif
             @endforeach
             @else
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
