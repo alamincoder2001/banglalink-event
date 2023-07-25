@@ -85,7 +85,7 @@
             <div id="conference-event" class="tab-pane fade active show">
                 <div class="row">
                     @foreach($events as $key => $item)
-                    @if($item->eventDate > date('Y-m-d'))
+                    @if($item->eventDate >= date('Y-m-d'))
                     <div class="col-md-12">
                         <div class="row event-item d-flex align-items-center">
                             <div class="col-md-1">
