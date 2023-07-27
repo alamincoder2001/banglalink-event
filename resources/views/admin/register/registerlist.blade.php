@@ -10,7 +10,7 @@
     <div class="col-sm-12">
         <div class="card widget-flat">
             <div class="card-body">
-                <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
+                <table id="customTable" class="table table-striped dt-responsive nowrap w-100">
                     <thead>
                         <tr>
                             <th>Sl</th>
