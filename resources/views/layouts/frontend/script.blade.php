@@ -5,7 +5,6 @@
 
 <!-- carousel jquery include -->
 <script src="{{asset('frontend')}}/assets/js/slick.min.js"></script>
-<script src="{{asset('frontend')}}/assets/js/owl.carousel.min.js"></script>
 
 <!-- map jquery include -->
 <script src="{{asset('frontend')}}/assets/js/gmap3.min.js"></script>
@@ -30,6 +29,9 @@
 
 <!-- custom jquery include -->
 <script src="{{asset('frontend')}}/assets/js/custom.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 
 <script>
     $.ajaxSetup({

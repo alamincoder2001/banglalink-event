@@ -7,14 +7,14 @@
     <div class="header-bottom">
         <div class="container">
             <div class="row" style="align-items: center;">
-                <div class="col-md-3">
+                <div class="col-md-3 col-sm-3 col-3">
                     <div class="site-logo-wrapper">
                         <a href="{{route('website')}}" class="logo">
                             <img src="{{asset('frontend')}}/assets/images/logo.png" style="width: 80px;" alt="logo_not_found">
                         </a>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 col-sm-9 col-9">
                     <div class="mainmenu-wrapper">
                         <div class="row">
                             <div class="col-md-12">
@@ -111,8 +111,7 @@
                     @endforeach
 
                     @foreach($events as $key => $item)
-                    @if($item->eventDate < date('Y-m-d')) 
-                    <div class="col-md-12">
+                    @if($item->eventDate < date('Y-m-d')) <div class="col-md-12">
                         <div class="row event-item d-flex align-items-center">
                             <div class="col-md-1">
                                 <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset($item->logo)}}" alt="Image_not_found">
@@ -132,9 +131,9 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
-                    @endif
-                    @endforeach
+                </div>
+                @endif
+                @endforeach
             </div>
         </div>
     </div>
@@ -148,13 +147,13 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-12">
                 <div class="owl-carousel owl-theme">
                     @if(count($galleries) > 0)
                     @foreach($galleries as $key => $item)
                     <div class="item">
                         <div class="card">
-                            <img src="{{asset($item->image)}}" class="card-img-top" alt="Participants Bands 1">
+                            <img src="{{asset($item->image)}}" width="50px;" alt="{{$item->title}}">
                             <div class="card-body">
                                 <a href="{{route('gallery.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
@@ -164,7 +163,7 @@
                     @else
                     <div class="item">
                         <div class="card">
-                            <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands 1">
+                            <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Gallery">
                             <div class="card-body">
                                 <a href="{{route('gallery.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
@@ -172,7 +171,7 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            <img src="{{asset('frontend')}}/assets/images/event/participantsband2.jpg" class="card-img-top" alt="Participants Bands 1">
+                            <img src="{{asset('frontend')}}/assets/images/event/participantsband2.jpg" class="card-img-top" alt="Gallery">
                             <div class="card-body">
                                 <a href="{{route('gallery.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
@@ -180,7 +179,7 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            <img src="{{asset('frontend')}}/assets/images/event/participantsband2.jpg" class="card-img-top" alt="Participants Bands 1">
+                            <img src="{{asset('frontend')}}/assets/images/event/participantsband2.jpg" class="card-img-top" alt="Gallery">
                             <div class="card-body">
                                 <a href="{{route('gallery.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
@@ -188,7 +187,7 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands 1">
+                            <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Gallery">
                             <div class="card-body">
                                 <a href="{{route('gallery.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
@@ -210,13 +209,13 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-12">
                 <div class="owl-carousel owl-theme">
                     @if(count($participants) > 0)
                     @foreach($participants as $key => $item)
                     <div class="item">
                         <div class="card">
-                            <img src="{{asset($item->image)}}" class="card-img-top" alt="Participants Bands 1">
+                            <img src="{{asset($item->image)}}" class="card-img-top" alt="{{$item->title}}">
                             <div class="card-body">
                                 <a href="{{route('participant.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
@@ -226,7 +225,7 @@
                     @else
                     <div class="item">
                         <div class="card">
-                            <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands 1">
+                            <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands">
                             <div class="card-body">
                                 <a href="{{route('participant.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
@@ -234,7 +233,7 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            <img src="{{asset('frontend')}}/assets/images/event/participantsband2.jpg" class="card-img-top" alt="Participants Bands 1">
+                            <img src="{{asset('frontend')}}/assets/images/event/participantsband2.jpg" class="card-img-top" alt="Participants Bands">
                             <div class="card-body">
                                 <a href="{{route('participant.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
@@ -242,7 +241,7 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands 1">
+                            <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands">
                             <div class="card-body">
                                 <a href="{{route('participant.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
@@ -250,7 +249,7 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands 1">
+                            <img src="{{asset('frontend')}}/assets/images/event/participantsband.jpg" class="card-img-top" alt="Participants Bands">
                             <div class="card-body">
                                 <a href="{{route('participant.page')}}" class="btn custom-btn btn-block d-flex justify-content-center">Details</a>
                             </div>
@@ -268,25 +267,39 @@
 @endsection
 
 @push('webjs')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-    $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        responsiveClass: true,
-        nav: false,
-        autoplay: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 3
+    $(window).on("load", () => {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            responsiveClass: true,
+            nav: false,
+            autoplay: true,
+            margin: 10,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1,
+                    nav: false,
+                    dots:false,
+                },
+    
+                678: {
+                    items: 2,
+                    center: true,
+                    dots:false,
+                },
+    
+                960: {
+                    items: 3,
+                    center: true
+                },    
+                1200: {
+                    items: 3,
+                }
             }
-        }
+        })
     })
 </script>
 @endpush
