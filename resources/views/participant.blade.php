@@ -23,31 +23,27 @@
     <div class="header-bottom">
         <div class="container">
             <div class="row" style="align-items: center;">
-                <div class="col-md-3">
+                <div class="col-md-3 col-3">
                     <div class="site-logo-wrapper">
                         <a href="{{ route('website') }}" class="logo">
                             <img src="{{ asset('frontend') }}/assets/images/logo.png" style="width: 80px;" alt="logo_not_found">
                         </a>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 col-9">
                     <div class="mainmenu-wrapper">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="menu-item-list ul-li clearfix">
-                                    <ul>
-                                        <li class="menu-item-has-children {{ Route::is('website') ? 'active' : '' }}">
-                                            <a href="{{ route('website') }}">home</a>
-                                        </li>
-                                        <li class="menu-item-has-children {{ Route::is('example.registershow') ? 'active' : '' }}">
-                                            <a href="{{ route('example.registershow') }}">Register</a>
-                                        </li>
-                                        <li class="menu-item-has-children {{ Route::is('gallery.page') ? 'active' : '' }}">
-                                            <a href="{{ route('gallery.page') }}">Gallery</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="menu-item-list ul-li clearfix">
+                            <ul>
+                                <li class="menu-item-has-children {{ Route::is('website') ? 'active' : '' }}">
+                                    <a href="{{ route('website') }}">home</a>
+                                </li>
+                                <li class="menu-item-has-children {{ Route::is('example.registershow') ? 'active' : '' }}">
+                                    <a href="{{ route('example.registershow') }}">Register</a>
+                                </li>
+                                <li class="menu-item-has-children {{ Route::is('gallery.page') ? 'active' : '' }}">
+                                    <a href="{{ route('gallery.page') }}">Gallery</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

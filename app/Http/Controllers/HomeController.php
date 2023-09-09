@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Models\ExampleRegister;
 use App\Models\Gallery;
 use App\Models\Participating;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
@@ -21,9 +20,9 @@ class HomeController extends Controller
         return view('website', compact('events', 'participants', 'galleries'));
     }
 
-    public function ExampleRegShow()
+    public function ExampleRegShow($name=null)
     {
-        return view('register');
+        return view('register', compact('name'));
     }
 
     public function ExampleReg(Request $request)

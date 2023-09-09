@@ -52,14 +52,15 @@
         @foreach($sliders as $key => $item)
         <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
             <img src="{{asset($item->image)}}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block text-white">
+            <!-- <div class="carousel-caption d-none d-md-block text-white"> -->
+            <div class="carousel-caption text-white">
                 @if($item->status == 1)
                 <h4>{{$item->title}}</h4>
                 <p>{{$item->description}}</p>
                 @endif
                 <!-- <a href="{{route('gallery.page')}}" class="about-btn custom-btn">About Us</a>
                 <a href="{{route('example.register')}}" class="start-btn">Get Started</a> -->
-                <a href="{{route('example.register')}}" class="about-btn custom-btn">Register Now</a>
+                <a href="{{route('example.registershow')}}" class="about-btn custom-btn">Register Now</a>
             </div>
         </div>
         @endforeach
@@ -89,21 +90,24 @@
                     @if($item->eventDate >= date('Y-m-d'))
                     <div class="col-md-12">
                         <div class="row event-item d-flex align-items-center">
-                            <div class="col-md-1">
-                                <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset($item->logo)}}" alt="Image_not_found">
+                            <div class="col-md-2 text-md-center text-center">
+                                <img style="width: 150px;height:150px;margin-right:15px;" src="{{asset($item->logo)}}" alt="Image_not_found">
                             </div>
                             <div class="title col-md-2 p-md-0">
                                 <span>{{\Carbon\Carbon::parse($item->eventDate)->format('D')}} {{ date("d/m/Y", strtotime($item->eventDate))}}</span>
                             </div>
-                            <div class="title col-md-5 p-md-0">
+                            <div class="title col-md-4 p-md-0">
                                 <span>{{$item->venue}}</span>
                             </div>
                             <div class="title col-md-2 p-md-0 text-uppercase">
                                 <span>{{date("h:i a", strtotime($item->From))}} - {{date("h:i a", strtotime($item->To))}}</span>
                             </div>
                             <div class="title col-md-2 text-right">
-                                <a href="{{ route('event.details', $item->id) }}" class="custom-btn">
+                                <!-- <a href="{{ route('event.details', $item->id) }}" class="custom-btn">
                                     details
+                                </a> -->
+                                <a href="{{route('example.registershow', $item->venue)}}" class="custom-btn">
+                                    Register Now
                                 </a>
                             </div>
                         </div>
@@ -114,21 +118,21 @@
                     @foreach($events as $key => $item)
                     @if($item->eventDate < date('Y-m-d')) <div class="col-md-12">
                         <div class="row event-item d-flex align-items-center">
-                            <div class="col-md-1">
-                                <img style="width: 75px;height:65px;margin-right:15px;" src="{{asset($item->logo)}}" alt="Image_not_found">
+                            <div class="col-md-2 text-md-center text-center">
+                                <img style="width: 150px;height:150px;margin-right:15px;" src="{{asset($item->logo)}}" alt="Image_not_found">
                             </div>
                             <div class="title col-md-2 p-md-0">
                                 <span>{{\Carbon\Carbon::parse($item->eventDate)->format('D')}} {{ date("d/m/Y", strtotime($item->eventDate))}}</span>
                             </div>
-                            <div class="title col-md-5 p-md-0">
+                            <div class="title col-md-4 p-md-0">
                                 <span>{{$item->venue}}</span>
                             </div>
                             <div class="title col-md-2 p-md-0 text-uppercase">
                                 <span>{{date("h:i a", strtotime($item->From))}} - {{date("h:i a", strtotime($item->To))}}</span>
                             </div>
-                            <div class="title col-md-2 text-right">
-                                <a href="{{ route('event.details', $item->id) }}" class="custom-btn">
-                                    details
+                            <div class="title col-md-2 text-md-right text-center">
+                                <a href="{{route('example.registershow', $item->venue)}}" class="custom-btn">
+                                    Register Now
                                 </a>
                             </div>
                         </div>

@@ -424,7 +424,7 @@ textarea:focus {
     z-index: 1;
     font-weight: 600;
     overflow: hidden;
-    padding: 10px 30px;
+    padding: 10px 25px;
     text-align: center;
     position: relative;
     border-radius: 50px;
@@ -12113,7 +12113,8 @@ button {
         font-size: 16px;
     }
     .custom-btn {
-        padding: 12px 25px;
+        padding: 8px 25px;
+        margin-top: 5px;
     }
     .special-offer-section .special-offer-content h2 {
         font-size: 18px;
