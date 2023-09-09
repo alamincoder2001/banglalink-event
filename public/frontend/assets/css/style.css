@@ -12339,6 +12339,11 @@ button {
     text-align: center;
 }
 
+.eventImg {
+    width: 400px;
+    height: 400px;
+}
+
 @media only screen and (max-width: 600px) and (min-width: 320px) {
     .carousel .carousel-item img {
         height: 350px;
@@ -12352,5 +12357,9 @@ button {
     .custom-btnnew {
         width: 250px !important;
         font-size: 15px !important;
+    }
+    .eventImg{
+        width: 100% !important;
+        height: 350px;
     }
 }

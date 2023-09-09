@@ -91,7 +91,7 @@
                     <div class="col-md-12">
                         <div class="row event-item d-flex align-items-center">
                             <div class="col-md-6 text-md-left text-center p-0">
-                                <img style="width: 400px;height:400px;margin-right:15px;" src="{{asset($item->logo != null ? $item->logo : '/noimage.jpg')}}" alt="Image_not_found">
+                                <img class="eventImg" src="{{asset($item->logo != null ? $item->logo : '/noimage.jpg')}}" alt="Image_not_found">
                             </div>
                             <div class="col-md-4">
                                 <div class="title">
@@ -122,7 +122,7 @@
                     <div class="col-md-12">
                         <div class="row event-item d-flex align-items-center">
                             <div class="col-md-6 text-md-left text-center p-0">
-                                <img style="width: 400px;height:400px;margin-right:15px;" src="{{asset($item->logo != null ? $item->logo : '/noimage.jpg')}}" alt="Image_not_found">
+                                <img class="eventImg" src="{{asset($item->logo != null ? $item->logo : '/noimage.jpg')}}" alt="Image_not_found">
                             </div>
                             <div class="col-md-4">
                                 <div class="title">
