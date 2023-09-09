@@ -438,6 +438,24 @@ textarea:focus {
     -webkit-box-shadow: 0 5px 60px 5px rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 60px 5px rgba(0, 0, 0, 0.2);
 }
+.custom-btnnew {
+    width: 350px;
+    z-index: 1;
+    font-weight: 600;
+    overflow: hidden;
+    padding: 10px 25px;
+    text-align: center;
+    position: relative;
+    border-radius: 50px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-size: 25px;
+    font-weight: 900;
+    text-transform: uppercase;
+    -webkit-box-shadow: 0 5px 60px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 60px 5px rgba(0, 0, 0, 0.2);
+}
 .custom-btn:after,
 .custom-btn:before {
     top: 0px;
@@ -12330,5 +12348,9 @@ button {
     .sticky-header-section .header-bottom .menu-item-list > ul > li > a {
         font-weight: 700;
         font-size: 10px;
+    }
+    .custom-btnnew {
+        width: 250px !important;
+        font-size: 15px !important;
     }
 }

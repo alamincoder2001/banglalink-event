@@ -60,7 +60,7 @@
                 @endif
                 <!-- <a href="{{route('gallery.page')}}" class="about-btn custom-btn">About Us</a>
                 <a href="{{route('example.register')}}" class="start-btn">Get Started</a> -->
-                <a href="{{route('example.registershow')}}" class="about-btn custom-btn">Register Now</a>
+                <a style="justify-content: center;margin:0 auto;background: white;color: black;border: 3px solid orange;" href="{{route('example.registershow')}}" class="custom-btnnew">Register Now</a>
             </div>
         </div>
         @endforeach
@@ -90,23 +90,25 @@
                     @if($item->eventDate >= date('Y-m-d'))
                     <div class="col-md-12">
                         <div class="row event-item d-flex align-items-center">
-                            <div class="col-md-2 text-md-center text-center">
-                                <img style="width: 150px;height:150px;margin-right:15px;" src="{{asset($item->logo)}}" alt="Image_not_found">
+                            <div class="col-md-6 text-md-left text-center p-0">
+                                <img style="width: 100%;height:300px;margin-right:15px;" src="{{asset($item->logo)}}" alt="Image_not_found">
                             </div>
-                            <div class="title col-md-2 p-md-0">
-                                <span>{{\Carbon\Carbon::parse($item->eventDate)->format('D')}} {{ date("d/m/Y", strtotime($item->eventDate))}}</span>
+                            <div class="col-md-4">
+                                <div class="title">
+                                    <span>{{$item->venue}}</span>
+                                </div>
+                                <div class="title">
+                                    <span>{{\Carbon\Carbon::parse($item->eventDate)->format('D')}} {{ date("d/m/Y", strtotime($item->eventDate))}}</span>
+                                </div>
+                                <div class="title text-uppercase">
+                                    <span>{{date("h:i a", strtotime($item->From))}} - {{date("h:i a", strtotime($item->To))}}</span>
+                                </div>
                             </div>
-                            <div class="title col-md-4 p-md-0">
-                                <span>{{$item->venue}}</span>
-                            </div>
-                            <div class="title col-md-2 p-md-0 text-uppercase">
-                                <span>{{date("h:i a", strtotime($item->From))}} - {{date("h:i a", strtotime($item->To))}}</span>
-                            </div>
-                            <div class="title col-md-2 text-right">
+                            <div class="col-md-2 title mt-md-0 mt-2 p-md-0">
                                 <!-- <a href="{{ route('event.details', $item->id) }}" class="custom-btn">
-                                    details
-                                </a> -->
-                                <a href="{{route('example.registershow', $item->venue)}}" class="custom-btn">
+                                            details
+                                        </a> -->
+                                <a href="{{route('example.registershow', $item->venue)}}" class="custom-btn btn-block d-flex align-items-center justify-content-center">
                                     Register Now
                                 </a>
                             </div>
@@ -116,27 +118,33 @@
                     @endforeach
 
                     @foreach($events as $key => $item)
-                    @if($item->eventDate < date('Y-m-d')) <div class="col-md-12">
+                    @if($item->eventDate < date('Y-m-d')) 
+                    <div class="col-md-12">
                         <div class="row event-item d-flex align-items-center">
-                            <div class="col-md-2 text-md-center text-center">
-                                <img style="width: 150px;height:150px;margin-right:15px;" src="{{asset($item->logo)}}" alt="Image_not_found">
+                            <div class="col-md-6 text-md-left text-center p-0">
+                                <img style="width: 100%;height:300px;margin-right:15px;" src="{{asset($item->logo)}}" alt="Image_not_found">
                             </div>
-                            <div class="title col-md-2 p-md-0">
-                                <span>{{\Carbon\Carbon::parse($item->eventDate)->format('D')}} {{ date("d/m/Y", strtotime($item->eventDate))}}</span>
+                            <div class="col-md-4">
+                                <div class="title">
+                                    <span>{{$item->venue}}</span>
+                                </div>
+                                <div class="title">
+                                    <span>{{\Carbon\Carbon::parse($item->eventDate)->format('D')}} {{ date("d/m/Y", strtotime($item->eventDate))}}</span>
+                                </div>
+                                <div class="title text-uppercase">
+                                    <span>{{date("h:i a", strtotime($item->From))}} - {{date("h:i a", strtotime($item->To))}}</span>
+                                </div>
                             </div>
-                            <div class="title col-md-4 p-md-0">
-                                <span>{{$item->venue}}</span>
-                            </div>
-                            <div class="title col-md-2 p-md-0 text-uppercase">
-                                <span>{{date("h:i a", strtotime($item->From))}} - {{date("h:i a", strtotime($item->To))}}</span>
-                            </div>
-                            <div class="title col-md-2 text-md-right text-center">
-                                <a href="{{route('example.registershow', $item->venue)}}" class="custom-btn">
+                            <div class="col-md-2 title mt-md-0 mt-2 p-md-0">
+                                <!-- <a href="{{ route('event.details', $item->id) }}" class="custom-btn">
+                                            details
+                                        </a> -->
+                                <a href="{{route('example.registershow', $item->venue)}}" class="custom-btn btn-block d-flex align-items-center justify-content-center">
                                     Register Now
                                 </a>
                             </div>
                         </div>
-                </div>
+                    </div>
                 @endif
                 @endforeach
             </div>
@@ -287,19 +295,19 @@
                 480: {
                     items: 1,
                     nav: false,
-                    dots:false,
+                    dots: false,
                 },
-    
+
                 678: {
                     items: 2,
                     center: true,
-                    dots:false,
+                    dots: false,
                 },
-    
+
                 960: {
                     items: 3,
                     center: true
-                },    
+                },
                 1200: {
                     items: 3,
                 }

@@ -63,7 +63,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="form-group ImageBackground text-center">
-                                <span class="text-danger">(150 X 150)</span>
+                                <span class="text-danger">(600 X 300)</span>
                                 <img src="{{asset('noimage.jpg')}}" class="imageShow" />
                                 <label for="image">Upload Image</label>
                                 <input type="file" id="image" name="logo" class="form-control shadow-none" onchange="imageUrl(event)" />
@@ -190,10 +190,10 @@
             let img = new Image()
             img.src = window.URL.createObjectURL(event.target.files[0]);
             img.onload = () => {
-                if (img.width === 150 && img.height === 150) {
+                if (img.width === 600 && img.height === 300) {
                     document.querySelector('.imageShow').src = window.URL.createObjectURL(event.target.files[0]);
                 } else {
-                    alert(`This image ${img.width} X ${img.width} but require image 150px X 150px`);
+                    alert(`This image ${img.width} X ${img.width} but require image 600px X 300px`);
                 }
             }
         }
