@@ -57,8 +57,9 @@
                 <h4>{{$item->title}}</h4>
                 <p>{{$item->description}}</p>
                 @endif
-                <a href="{{route('gallery.page')}}" class="about-btn custom-btn">About Us</a>
-                <a href="{{route('example.register')}}" class="start-btn">Get Started</a>
+                <!-- <a href="{{route('gallery.page')}}" class="about-btn custom-btn">About Us</a>
+                <a href="{{route('example.register')}}" class="start-btn">Get Started</a> -->
+                <a href="{{route('example.register')}}" class="about-btn custom-btn">Register Now</a>
             </div>
         </div>
         @endforeach
