@@ -21,6 +21,14 @@ class CreateExampleRegistersTable extends Migration
             $table->string('phone', 20)->unique();
             $table->string('email', 100)->unique();
             $table->string('university');
+            $table->integer('ennovator_source')->nullable();
+            $table->integer('typeof_degree')->nullable();
+            $table->string('degree_level', 50)->nullable();
+            $table->string('academic_year', 50)->nullable();
+            $table->string('gender', 50)->nullable();
+            $table->string('instagram_status', 20)->nullable();
+            $table->string('linkedin_status', 20)->nullable();
+            $table->string('facebook_status', 20)->nullable();
             $table->string('address');
             $table->timestamps();
         });

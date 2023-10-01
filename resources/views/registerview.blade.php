@@ -40,10 +40,10 @@
 <section style="padding: 110px 0;">
     <div class="container">
         <div class="row d-flex justify-content-center py-3">
-            <div class="col-md-1">
-                <a class="text-white" style="background: green;padding: 3px 15px;" onclick="printWindow(event)"><i class="fa fa-print"></i></a>
+            <div class="col-md-1 text-right pr-0">
+                <a class="text-white" style="background: #ffb100;padding: 8px 15px;border: 1px solid #bbbbbb;border-radius: 5px;" onclick="printWindow(event)"><i class="fa fa-print"></i></a>
             </div>
-            <div class="col-md-5" id="content">
+            <div class="col-md-5 text-center" id="content">
                 <div class="ticket">
                     <h1 style="font-size: 30px;font-weight: 700;">Banglalink Youth Fest - 2023</h1>
                     <div class="ticket-details">
@@ -75,6 +75,10 @@
                     <div class="ticket-barcode">
                         <div id="qrcode" class="text-center"></div>
                     </div>
+                </div>
+                <div class="d-flex justify-content-between m-0 mt-5">
+                    <a style="width:48%;background: #ff9900;padding: 7px 5px;font-style:italic;border-radius: 5px;" class="text-white link" href="{{url('/')}}"><i style="color:red;font-weight:900;" class="fas fa-long-arrow-alt-left"></i></i> <span>Return To Youthfest</span></a>
+                    <a title="ennovators.banglalink.net" target="_blank" style="width:48%;background: #ff9900;padding: 7px 5px;font-style:italic;border-radius: 5px;" class="text-white link" href="https://ennovators.banglalink.net/"><i style="color:red;font-weight:900;" class="fas fa-long-arrow-alt-right"></i></i> <span>Go To Ennovators</span></a>
                 </div>
             </div>
         </div>
@@ -115,6 +119,11 @@
                         <title>Event Ticket</title>
                         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
                         <link href="${location.origin}/frontend/assets/css/custom.css" rel="stylesheet" />
+                        <style>                            
+                            .link{
+                                display:none !important;
+                            }
+                        </style>
                     </head>
                     <body>
                         <div class="container-fluid">
@@ -128,8 +137,6 @@
                     </html>
         
         `)
-
-
 
         myWindow.focus();
         await new Promise(resolve => setTimeout(resolve, 500));

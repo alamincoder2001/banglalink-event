@@ -36,36 +36,37 @@
 </header>
 <!-- header-section - end ================================================== -->
 
-<section id="contact-section" class="contact-section sec-ptb-100 clearfix" style="padding: 120px 0;">
+<section id="contact-section" class="contact-section sec-ptb-100 clearfix" style="padding: 120px 0; background:url({{asset('/registerbg.jpg')}});background-position:center;background-repeat: no-repeat;background-size: cover;">
     <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-5">
-                <h2 class="big-title text-center" style="font-size: 40px;font-weight: 900;">Register Your Booking</h2>
-                <div class="contact-form form-wrapper">
-                    <form onsubmit="Register(event)">
+        <form onsubmit="Register(event)">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12">
+                    <h2 class="big-title text-center" style="font-size: 40px;font-weight: 900;">Register Your Booking</h2>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-form form-wrapper">
                         <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-12">
                                 <div class="form-item">
                                     <input type="text" name="name" placeholder="Your Name" autocomplete="off">
                                     <span class="text-danger error-name d-none"></span>
                                 </div>
                             </div>
 
-                            <div class="col-sm-12">
+                            <div class="col-12">
                                 <div class="form-item">
                                     <input type="phone" name="phone" placeholder="Phone Number" autocomplete="off">
                                     <span class="text-danger error-phone d-none"></span>
                                 </div>
                             </div>
 
-                            <div class="col-sm-12">
+                            <div class="col-12">
                                 <div class="form-item">
-                                    <input type="email" name="email" placeholder="Email Address" autocomplete="off">
-                                    <span class="text-danger error-email d-none"></span>
+                                    <textarea class="mb-0" name="address" placeholder="Your Address" autocomplete="off"></textarea>
+                                    <span class="text-danger error-address d-none"></span>
                                 </div>
                             </div>
-
-                            <div class="col-sm-12">
+                            <div class="col-12">
                                 <div class="form-item">
                                     <select name="university" id="event-category-select">
                                         <option value="">Choose University</option>
@@ -76,19 +77,114 @@
                                     <span class="text-danger error-university d-none"></span>
                                 </div>
                             </div>
-
-                            <div class="col-sm-12 text-right">
-                                <div class="form-item mb-0 text-left">
-                                    <textarea name="address" placeholder="Your Address"></textarea>
-                                    <span class="text-danger error-address d-none"></span>
+                            <div class="col-12">
+                                <div class="form-item">
+                                    <select name="academic_year" id="event-category-select">
+                                        <option value="">Choose Academic Year</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                    </select>
+                                    <span class="text-danger error-academic_year d-none"></span>
                                 </div>
-                                <button type="submit" class="custom-btn">Register</button>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-item">
+                                    <select name="degree_level" id="event-category-select">
+                                        <option value="">Choose Degree Level</option>
+                                        <option value="Graduate">Graduate</option>
+                                        <option value="Undergraduate">Undergraduate</option>
+                                    </select>
+                                    <span class="text-danger error-degree_level d-none"></span>
+                                </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-form form-wrapper">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-item">
+                                    <input type="email" name="email" placeholder="Email Address" autocomplete="off">
+                                    <span class="text-danger error-email d-none"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-item">
+                                    <select name="gender" id="event-category-select">
+                                        <option value="">Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Others">Others</option>
+                                        <option value="Frefer not to say">Frefer not to say</option>
+                                    </select>
+                                    <span class="text-danger error-gender d-none"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-item">
+                                    <select name="typeof_degree" id="event-category-select">
+                                        <option value="">Choose Type of Degree</option>
+                                        @foreach(\App\Models\Degree::get() as $key => $item)
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <span class="text-danger error-typeof_degree d-none"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-item">
+                                    <select name="ennovator_source" id="event-category-select">
+                                        <option value="">Where did you learn about Ennovators</option>
+                                        @foreach(\App\Models\EnovatorSource::get() as $key => $item)
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <span class="text-danger error-ennovator_source d-none"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-item">
+                                    <select name="facebook_status" id="event-category-select">
+                                        <option value="">Do You Follow the Banglalink Facebook Page?</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <span class="text-danger error-facebook_status d-none"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-item">
+                                    <select name="linkedin_status" id="event-category-select">
+                                        <option value="">Do You Follow the Banglalink LinkedIn Page?</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <span class="text-danger error-linkedin_status d-none"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-item">
+                                    <select name="instagram_status" id="event-category-select">
+                                        <option value="">Do You Follow the Banglalink Instagram Page?</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <span class="text-danger error-instagram_status d-none"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="custom-btn px-5">Register</button>
                 </div>
             </div>
-        </div>
+        </form>
 
         <div class="row d-flex justify-content-center mt-5">
             <div class="col-md-8">
@@ -99,13 +195,13 @@
                         <div class="contact-form form-wrapper" style="height: 150px;padding:5px; box-shadow:0px 0px 1px 1px #cf32001f;">
                             <form class="reprint" onsubmit="ReprintSubmit(event)">
                                 <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col-12">
                                         <div class="form-item">
                                             <input type="phone" name="phone" placeholder="Phone Number" autocomplete="off">
                                             <span class="text-danger phone"></span>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 text-right">
+                                    <div class="col-12 text-right">
                                         <button type="submit" class="custom-btn">Reprint</button>
                                     </div>
                                 </div>

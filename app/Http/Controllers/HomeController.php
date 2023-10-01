@@ -28,11 +28,19 @@ class HomeController extends Controller
     public function ExampleReg(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:100',
-            'phone' => 'required|unique:example_registers,phone|digits:11',
-            'email' => 'required|email|unique:example_registers,email|max:100',
-            'address' => 'required|max:255',
-            'university' => 'required|max:255',
+            'name'             => 'required|max:100',
+            'phone'            => 'required|unique:example_registers,phone|digits:11',
+            'email'            => 'required|email|unique:example_registers,email|max:100',
+            'address'          => 'required|max:255',
+            'university'       => 'required|max:255',
+            'ennovator_source' => 'required',
+            'typeof_degree'    => 'required',
+            'degree_level'     => 'required',
+            'academic_year'    => 'required',
+            'gender'           => 'required',
+            'instagram_status' => 'required',
+            'linkedin_status'  => 'required',
+            'facebook_status'  => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -45,15 +53,23 @@ class HomeController extends Controller
 
         try {
 
-            $rFormat                  = date('y') . '01';
-            $register                 = new ExampleRegister();
-            $register->registrationID = $this->generateCode("ExampleRegister", $rFormat);
-            $register->name           = $request->name;
-            $register->slug           = $this->make_slug(date('Y-m-d h:i:s') . ' ' . $request->name);
-            $register->phone          = $request->phone;
-            $register->email          = $request->email;
-            $register->university     = $request->university;
-            $register->address        = $request->address;
+            $rFormat                    = date('y') . '01';
+            $register                   = new ExampleRegister();
+            $register->registrationID   = $this->generateCode("ExampleRegister", $rFormat);
+            $register->name             = $request->name;
+            $register->slug             = $this->make_slug(date('Y-m-d h:i:s') . ' ' . $request->name);
+            $register->phone            = $request->phone;
+            $register->email            = $request->email;
+            $register->university       = $request->university;
+            $register->address          = $request->address;
+            $register->ennovator_source = $request->ennovator_source;
+            $register->typeof_degree    = $request->typeof_degree;
+            $register->degree_level     = $request->degree_level;
+            $register->academic_year    = $request->academic_year;
+            $register->gender           = $request->gender;
+            $register->instagram_status = $request->instagram_status;
+            $register->linkedin_status  = $request->linkedin_status;
+            $register->facebook_status  = $request->facebook_status;
             $register->save();
 
             // Mail::to($request->email)->send(new RegisterTicket($register));

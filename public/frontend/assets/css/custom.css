@@ -270,9 +270,16 @@
     border: 1px solid #f0f0f0;
     padding: 0px 8px;
     border-radius: 3px;
+    color: #878992;
+    font-size: 14px;
+    border-radius: 7px;
 }
+
 .form-wrapper .form-item input {
     padding: 6px 10px;
+    color: #878992;
+    font-size: 14px;
+    border-radius: 7px !important;
 }
 
 .form-wrapper .form-item {
@@ -284,7 +291,9 @@
 .form-wrapper .form-item textarea {
     min-height: 0;
     margin-bottom: 15px;
-    padding: 10px !important;
+    padding: 15px !important;
+    color: #878992;
+    border-radius: 7px;
 }
 
 /* #contact-section{
