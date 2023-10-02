@@ -20,7 +20,9 @@ class CreateExampleRegistersTable extends Migration
             $table->string('slug');
             $table->string('phone', 20)->unique();
             $table->string('email', 100)->unique();
+            $table->string('dob');
             $table->string('university');
+            $table->string('studentId');
             $table->integer('ennovator_source')->nullable();
             $table->integer('typeof_degree')->nullable();
             $table->string('degree_level', 50)->nullable();

@@ -55,7 +55,7 @@
 
                             <div class="col-12">
                                 <div class="form-item">
-                                    <input type="phone" name="phone" placeholder="Phone Number" autocomplete="off">
+                                    <input type="text" name="phone" placeholder="Phone Number" autocomplete="off">
                                     <span class="text-danger error-phone d-none"></span>
                                 </div>
                             </div>
@@ -75,6 +75,12 @@
                                         @endforeach
                                     </select>
                                     <span class="text-danger error-university d-none"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-item">
+                                    <input type="text" name="studentId" placeholder="Student Id" autocomplete="off">
+                                    <span class="text-danger error-studentId d-none"></span>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -109,6 +115,12 @@
                                 <div class="form-item">
                                     <input type="email" name="email" placeholder="Email Address" autocomplete="off">
                                     <span class="text-danger error-email d-none"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-item">
+                                    <input type="date" name="dob" placeholder="Date of Birth" autocomplete="off" max="{{date('Y-m-d')}}">
+                                    <span class="text-danger error-dob d-none"></span>
                                 </div>
                             </div>
 

@@ -34,14 +34,14 @@
             buttons: [{
                     extend: 'print',
                     text: 'Print',
-                    className: 'btn btn-info btn-sm'
+                    className: 'btn btn-info btn-sm',
                 },
                 {
                     extend: 'csv',
                     text: 'CSV',
                     className: 'btn btn-info btn-sm',
                     exportOptions: {
-                        columns: [1, 2, 3, 4,5,6]
+                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
                     },
                 },
                 {
@@ -49,7 +49,7 @@
                     text: 'Excel',
                     className: 'btn btn-info btn-sm',
                     exportOptions: {
-                        columns: [1, 2, 3, 4,5,6]
+                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
                     },
                 },
                 {
@@ -57,7 +57,7 @@
                     text: 'PDF',
                     className: 'btn btn-info btn-sm',
                     exportOptions: {
-                        columns: [1, 2, 3, 4,5,6]
+                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
                     },
                 }
             ],

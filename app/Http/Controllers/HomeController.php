@@ -34,6 +34,8 @@ class HomeController extends Controller
             'address'          => 'required|max:255',
             'university'       => 'required|max:255',
             'ennovator_source' => 'required',
+            'dob'              => 'required',
+            'studentId'        => 'required',
             'typeof_degree'    => 'required',
             'degree_level'     => 'required',
             'academic_year'    => 'required',
@@ -41,7 +43,7 @@ class HomeController extends Controller
             'instagram_status' => 'required',
             'linkedin_status'  => 'required',
             'facebook_status'  => 'required',
-        ]);
+        ], ['dob.required' => 'Date of birth required']);
 
         if ($validator->fails()) {
             $notification = array(
@@ -59,17 +61,19 @@ class HomeController extends Controller
             $register->name             = $request->name;
             $register->slug             = $this->make_slug(date('Y-m-d h:i:s') . ' ' . $request->name);
             $register->phone            = $request->phone;
+            $register->dob              = $request->dob;
+            $register->gender           = $request->gender;
             $register->email            = $request->email;
-            $register->university       = $request->university;
             $register->address          = $request->address;
-            $register->ennovator_source = $request->ennovator_source;
+            $register->university       = $request->university;
+            $register->studentId        = $request->studentId;
+            $register->academic_year    = $request->academic_year;
             $register->typeof_degree    = $request->typeof_degree;
             $register->degree_level     = $request->degree_level;
-            $register->academic_year    = $request->academic_year;
-            $register->gender           = $request->gender;
+            $register->ennovator_source = $request->ennovator_source;
+            $register->facebook_status  = $request->facebook_status;
             $register->instagram_status = $request->instagram_status;
             $register->linkedin_status  = $request->linkedin_status;
-            $register->facebook_status  = $request->facebook_status;
             $register->save();
 
             // Mail::to($request->email)->send(new RegisterTicket($register));
