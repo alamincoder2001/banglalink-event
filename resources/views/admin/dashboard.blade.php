@@ -8,49 +8,37 @@
 
 <div class="row">
     <div class="col-sm-4">
-        <div class="card widget-flat" style="box-shadow: 0px 0px 0px 5px #bbbbbb;background: #ff841ede;">
-            <div class="card-body">
+        <div class="card widget-flat text-center" style="box-shadow: 0px 0px 0px 5px #bbbbbb;background: #ffec1e2b;">
+            <div class="card-body p-2">
                 <div class="float-end">
                     <i class="mdi mdi-account-multiple widget-icon"></i>
                 </div>
-                <h5 class="text-white fw-normal mt-0" title="Number of Today Registration">Today Registration </h5>
-                <h3 class="mt-3 mb-3 text-white">{{count($todayreg)}}</h3>
-                <p class="mb-0 text-white">
-                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i></span>
-                    <span class="text-nowrap text-white">Today Registration</span>
-                </p>
+                <h5 class="text-dark fw-normal mt-0" title="Number of Today Registration">Today Registration </h5>
+                <h3 class="mt-2 text-dark">{{count($todayreg)}}</h3>
             </div>
         </div>
     </div>
 
     <div class="col-sm-4">
-        <div class="card widget-flat" style="box-shadow: 0px 0px 0px 5px #bbbbbb;background: #ff841ede;">
-            <div class="card-body">
+        <div class="card widget-flat text-center" style="box-shadow: 0px 0px 0px 5px #bbbbbb;background: #ffec1e2b;">
+            <div class="card-body p-2">
                 <div class="float-end">
                     <i class="mdi mdi-account-multiple widget-icon"></i>
                 </div>
-                <h5 class="text-white fw-normal mt-0" title="Number of Registration">Total Registration</h5>
-                <h3 class="mt-3 mb-3 text-white">{{$registers->count()}}</h3>
-                <p class="mb-0 text-white">
-                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i></span>
-                    <span class="text-nowrap">Total Registration</span>
-                </p>
+                <h5 class="text-dark fw-normal mt-0" title="Number of Registration">Total Registration</h5>
+                <h3 class="mt-2 text-dark">{{$registers->count()}}</h3>
             </div>
         </div>
     </div>
 
     <div class="col-sm-4">
-        <div class="card widget-flat" style="box-shadow: 0px 0px 0px 5px #bbbbbb;background: #ff841ede;">
-            <div class="card-body">
+        <div class="card widget-flat text-center" style="box-shadow: 0px 0px 0px 5px #bbbbbb;background: #ffec1e2b;">
+            <div class="card-body p-2">
                 <div class="float-end">
                     <i class="mdi mdi-calendar-plus widget-icon"></i>
                 </div>
-                <h5 class="text-white fw-normal mt-0" title="Number of Events">Total Events </h5>
-                <h3 class="mt-3 mb-3 text-white">{{$events->count()}}</h3>
-                <p class="mb-0 text-white">
-                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i></span>
-                    <span class="text-nowrap">Total Event</span>
-                </p>
+                <h5 class="text-dark fw-normal mt-0" title="Number of Events">Total Events </h5>
+                <h3 class="mt-2 text-dark">{{$events->count()}}</h3>
             </div>
         </div>
     </div>
