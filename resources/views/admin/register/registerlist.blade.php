@@ -10,7 +10,31 @@
     <div class="col-sm-12">
         <div class="card widget-flat">
             <div class="card-body">
-                <table id="customTable" class="table table-striped dt-responsive nowrap w-100">
+                <div class="row justify-content-end">
+                    <div class="col-4 col-md-2">
+                        <div class="form-group">
+                            <select style="padding: 3px 8px;" name="searchBy" id="searchBy" class="form-select">
+                                <option value="">All</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <div class="form-group">
+                            <input style="padding: 3px 8px;" type="date" name="dateFrom" class="dateFrom form-control" value="{{date('Y-m-d')}}" />
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <div class="form-group">
+                            <input style="padding: 3px 8px;" type="date" name="dateTo" class="dateTo form-control" value="{{date('Y-m-d')}}" />
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-1">
+                        <div class="form-group">
+                            <button style="padding: 3px 9px;" type="button" onclick="SearchData()" class="btn btn-info btn-sm">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <table id="example" class="table table-striped dt-responsive nowrap w-100">
                     <thead>
                         <tr>
                             <th>Sl</th>
@@ -33,52 +57,6 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-
-
-                    <tbody>
-                        @foreach($registers as $key => $item)
-                        <tr>
-                            <td>{{$key + 1}}</td>
-                            <td>{{$item->registrationID}}</td>
-                            <td>{{$item->name}}</td>
-                            <td>{{$item->phone}}</td>
-                            <td>{{$item->email}}</td>
-                            <td>{{$item->gender}}</td>
-                            <td>{{$item->dob}}</td>
-                            <td>{{$item->address}}</td>
-                            <td>{{$item->university}}</td>
-                            <td>{{$item->studentId}}</td>
-                            <td>{{$item->academic_year}}</td>
-                            <td>{{$item->gender ? $item->degree->name : ''}}</td>
-                            <td>{{$item->degree_level}}</td>
-                            <td>{{$item->ennovator ? $item->ennovator->name: ''}}</td>
-                            <td>
-                                @if($item->facebook_status == 'Yes')
-                                <span class="badge bg-success">{{$item->facebook_status}}</span>
-                                @else
-                                <span class="badge bg-danger">{{$item->facebook_status}}</span>
-                                @endif
-                            </td>
-                            <td>
-                                @if($item->instagram_status == 'Yes')
-                                <span class="badge bg-success">{{$item->instagram_status}}</span>
-                                @else
-                                <span class="badge bg-danger">{{$item->instagram_status}}</span>
-                                @endif
-                            </td>
-                            <td>
-                                @if($item->linkedin_status == 'Yes')
-                                <span class="badge bg-success">{{$item->linkedin_status}}</span>
-                                @else
-                                <span class="badge bg-danger">{{$item->linkedin_status}}</span>
-                                @endif
-                            </td>
-                            <td>
-                                <a class="btn btn-danger btn-sm" href="{{route('admin.registerdestroy', $item->id)}}" onclick="registerDelete(event)">Delete</a>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
                 </table>
             </div>
         </div>
@@ -101,5 +79,150 @@
             }
         })
     }
+
+    function SearchData() {
+        var dataTable = $('#example').DataTable();
+        if ($.fn.DataTable.isDataTable('#example')) {
+            dataTable.destroy();
+        }
+
+        dateFrom = $('.dateFrom').val();
+        dateTo = $('.dateTo').val();
+        var table = $('#example').DataTable({
+            ajax: {
+                url: '/admin/search-register',
+                method: 'POST',
+                data: {
+                    dateFrom: dateFrom,
+                    dateTo: dateTo,
+                },
+                dataSrc: 'data'
+            },
+            pageLength: 100,
+            dom: 'Bfrtip',
+            buttons: [{
+                    extend: 'print',
+                    text: 'Print',
+                    className: 'btn btn-info btn-sm',
+                },
+                {
+                    extend: 'csv',
+                    text: 'CSV',
+                    className: 'btn btn-info btn-sm',
+                    exportOptions: {
+                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+                    },
+                },
+                {
+                    extend: 'excel',
+                    text: 'Excel',
+                    className: 'btn btn-info btn-sm',
+                    exportOptions: {
+                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+                    },
+                },
+                {
+                    extend: 'pdf',
+                    text: 'PDF',
+                    className: 'btn btn-info btn-sm',
+                    exportOptions: {
+                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+                    },
+                }
+            ],
+            columns: [{
+                    data: null,
+                },
+                {
+                    data: "registrationID"
+                },
+                {
+                    data: "name"
+                },
+                {
+                    data: "phone"
+                },
+                {
+                    data: "email"
+                },
+                {
+                    data: "gender"
+                },
+                {
+                    data: "dob"
+                },
+                {
+                    data: "address"
+                },
+                {
+                    data: "university"
+                },
+                {
+                    data: "studentId"
+                },
+                {
+                    data: "academic_year"
+                },
+                {
+                    data: "degree_name"
+                },
+                {
+                    data: "degree_level"
+                },
+                {
+                    data: "ennovator_name"
+                },
+                {
+                    data: null,
+                    render: data => {
+                        let htMl;
+                        if (data.facebook_status == 'Yes') {
+                            htMl = `<span class="badge bg-success">${data.facebook_status}</span>`
+                        } else {
+                            htMl = `<span class="badge bg-danger">${data.facebook_status}</span>`;
+                        }
+                        return htMl;
+                    }
+                },
+                {
+                    data: null,
+                    render: data => {
+                        let htMl;
+                        if (data.instagram_status == 'Yes') {
+                            htMl = `<span class="badge bg-success">${data.instagram_status}</span>`
+                        } else {
+                            htMl = `<span class="badge bg-danger">${data.instagram_status}</span>`;
+                        }
+                        return htMl;
+                    }
+                },
+                {
+                    data: null,
+                    render: data => {
+                        let htMl;
+                        if (data.linkedin_status == 'Yes') {
+                            htMl = `<span class="badge bg-success">${data.linkedin_status}</span>`
+                        } else {
+                            htMl = `<span class="badge bg-danger">${data.linkedin_status}</span>`;
+                        }
+                        return htMl;
+                    }
+                },
+                {
+                    data: null,
+                    render(data) {
+                        return `<a class="btn btn-danger btn-sm" href="/admin/register-delete${data.id}" onclick="registerDelete(event)">Delete</a>`
+                    },
+                },
+            ]
+        });
+        table.on('order.dt search.dt', function() {
+            table.column(0).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    }
+
+    SearchData();
 </script>
 @endpush

@@ -28,41 +28,41 @@
 <script src="{{asset('backend')}}/assets/js/pages/demo.datatable-init.js"></script>
 
 <script>
-    $(document).ready(function() {
-        $('#customTable').DataTable({
-            dom: 'Bfrtip',
-            buttons: [{
-                    extend: 'print',
-                    text: 'Print',
-                    className: 'btn btn-info btn-sm',
-                },
-                {
-                    extend: 'csv',
-                    text: 'CSV',
-                    className: 'btn btn-info btn-sm',
-                    exportOptions: {
-                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-                    },
-                },
-                {
-                    extend: 'excel',
-                    text: 'Excel',
-                    className: 'btn btn-info btn-sm',
-                    exportOptions: {
-                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-                    },
-                },
-                {
-                    extend: 'pdf',
-                    text: 'PDF',
-                    className: 'btn btn-info btn-sm',
-                    exportOptions: {
-                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-                    },
-                }
-            ],
-        });
-    });
+    // $(document).ready(function() {
+    //     $('#example').DataTable({
+    //         dom: 'Bfrtip',
+    //         buttons: [{
+    //                 extend: 'print',
+    //                 text: 'Print',
+    //                 className: 'btn btn-info btn-sm',
+    //             },
+    //             {
+    //                 extend: 'csv',
+    //                 text: 'CSV',
+    //                 className: 'btn btn-info btn-sm',
+    //                 exportOptions: {
+    //                     columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    //                 },
+    //             },
+    //             {
+    //                 extend: 'excel',
+    //                 text: 'Excel',
+    //                 className: 'btn btn-info btn-sm',
+    //                 exportOptions: {
+    //                     columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    //                 },
+    //             },
+    //             {
+    //                 extend: 'pdf',
+    //                 text: 'PDF',
+    //                 className: 'btn btn-info btn-sm',
+    //                 exportOptions: {
+    //                     columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    //                 },
+    //             }
+    //         ],
+    //     });
+    // });
 </script>
 
 <!-- Datatable Demo Aapp js -->

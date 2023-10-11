@@ -20,6 +20,8 @@ Route::group(['prefix' => 'admin'], function () {
     // register list
     Route::get('/register-list', [AdminController::class, 'registerList'])->name('admin.registerlist');
     Route::get('/register-delete/{id}', [AdminController::class, 'registerDestroy'])->name('admin.registerdestroy');
+    Route::post('/search-register', [AdminController::class, 'searchRegister'])->name('admin.searchRegister');
+    Route::post('/get-graph-data', [AdminController::class, 'getGraphData'])->name('admin.get.graphdata');
     
     // university
     Route::get('/university', [UniversityController::class, 'create'])->name('admin.university.create');
