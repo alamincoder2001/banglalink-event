@@ -58,6 +58,7 @@
                         </tr>
                     </thead>
                 </table>
+                
             </div>
         </div>
     </div>
@@ -68,18 +69,6 @@
 
 @push('js')
 <script>
-    function registerDelete(event) {
-        event.preventDefault();
-        $.ajax({
-            url: event.target.href,
-            method: "GET",
-            success: res => {
-                alert(res)
-                location.reload();
-            }
-        })
-    }
-
     function SearchData() {
         var dataTable = $('#example').DataTable();
         if ($.fn.DataTable.isDataTable('#example')) {
@@ -211,7 +200,7 @@
                 {
                     data: null,
                     render(data) {
-                        return `<a class="btn btn-danger btn-sm" href="/admin/register-delete${data.id}" onclick="registerDelete(event)">Delete</a>`
+                        return `<a class="btn btn-danger btn-sm" href="/admin/register-delete/${data.id}" onclick="registerDelete(event)">Delete</a>`
                     },
                 },
             ]
@@ -224,5 +213,20 @@
     }
 
     SearchData();
+
+    function registerDelete(event) {
+        event.preventDefault();
+        console.log(event.target.href);
+        if (confirm("Are you sure!")) {
+            $.ajax({
+                url: event.target.href,
+                method: "GET",
+                success: res => {
+                    alert(res)
+                    location.reload();
+                }
+            })
+        }
+    }
 </script>
 @endpush
