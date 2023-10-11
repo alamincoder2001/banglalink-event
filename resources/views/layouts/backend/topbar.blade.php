@@ -96,15 +96,9 @@
                     </div>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
+                    <a href="{{route('admin.profile')}}" class="dropdown-item">
                         <i class="mdi mdi-account-circle me-1"></i>
                         <span>My Account</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <i class="mdi mdi-account-edit me-1"></i>
-                        <span>Settings</span>
                     </a>
 
                     <!-- item-->

@@ -67,6 +67,12 @@
                     <span> University Entry </span>
                 </a>
             </li>
+            <li class="side-nav-item">
+                <a href="{{route('admin.logout')}}" class="side-nav-link">
+                    <i class="mdi mdi-logout"></i>
+                    <span> Logout </span>
+                </a>
+            </li>
             <!-- <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
                     <i class="uil-store"></i>

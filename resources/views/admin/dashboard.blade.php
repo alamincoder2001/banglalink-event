@@ -17,7 +17,7 @@
                 <h3 class="mt-3 mb-3 text-white">{{count($todayreg)}}</h3>
                 <p class="mb-0 text-white">
                     <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i></span>
-                    <span class="text-nowrap text-white">Totay Registration</span>
+                    <span class="text-nowrap text-white">Today Registration</span>
                 </p>
             </div>
         </div>
