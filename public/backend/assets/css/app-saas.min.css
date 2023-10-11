@@ -14102,7 +14102,8 @@ html[data-sidenav-user="true"] .leftbar-user {
     -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
     font-size: var(--ct-menu-item-font-size);
-    padding: var(--ct-menu-item-padding-y) var(--ct-menu-item-padding-x);
+    /* padding: var(--ct-menu-item-padding-y) var(--ct-menu-item-padding-x); */
+    padding: 6px 10px;
 }
 .side-nav .side-nav-link:active,
 .side-nav .side-nav-link:focus,
