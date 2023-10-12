@@ -4,6 +4,26 @@
 @section('breadcrumbTitle', 'Register List')
 @section('breadcrumbSubTitle', 'Register List')
 
+@push('style')
+<style>
+    div.dataTables_processing {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 30px;
+        margin-left: -125px;
+        margin-top: -15px;
+        padding: 14px 0 2px 0;
+        border: 1px solid #ddd;
+        text-align: center;
+        color: #999;
+        font-size: 14px;
+        background-color: white;
+    }
+</style>
+@endpush
+
 @section('content')
 
 <div class="row">
@@ -76,7 +96,8 @@
 
         dateFrom = $('.dateFrom').val();
         dateTo = $('.dateTo').val();
-        var table = $('#example').DataTable({
+
+        $('#example').DataTable({
             ajax: {
                 url: '/admin/search-register',
                 method: 'POST',
@@ -86,7 +107,12 @@
                 },
                 dataSrc: 'data'
             },
+            fixedHeader: true,
             pageLength: 100,
+            processing: true,
+            language: {
+                processing: '<img src="/loading.gif" width="40"/><span class="sr-only">Loading...</span>',
+            },
             dom: 'Bfrtip',
             buttons: [{
                     extend: 'print',
@@ -202,20 +228,17 @@
                         return `<a class="btn btn-danger btn-sm" href="/admin/register-delete/${data.id}" onclick="registerDelete(event)">Delete</a>`
                     },
                 },
-            ]
+            ],
+            fnCreatedRow: function(row, data, index) {
+                $('td', row).eq(0).html(index + 1);
+            }
         });
-        table.on('order.dt search.dt', function() {
-            table.column(0).nodes().each(function(cell, i) {
-                cell.innerHTML = i + 1;
-            });
-        }).draw();
     }
 
     SearchData();
 
     function registerDelete(event) {
         event.preventDefault();
-        console.log(event.target.href);
         if (confirm("Are you sure!")) {
             $.ajax({
                 url: event.target.href,
