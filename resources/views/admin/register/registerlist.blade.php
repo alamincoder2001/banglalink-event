@@ -58,14 +58,13 @@
                     <thead>
                         <tr>
                             <th>Sl</th>
-                            <th>Register Code</th>
+                            <th>University Name</th>
                             <th>Name</th>
                             <th>Mobile</th>
                             <th>Email</th>
                             <th>Gender</th>
                             <th>Date Of Birth</th>
                             <th>Address</th>
-                            <th>University</th>
                             <th>Student Id</th>
                             <th>Academic Year</th>
                             <th>Type Of Degree</th>
@@ -124,7 +123,7 @@
                     text: 'CSV',
                     className: 'btn btn-info btn-sm',
                     exportOptions: {
-                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
                     },
                 },
                 {
@@ -132,7 +131,7 @@
                     text: 'Excel',
                     className: 'btn btn-info btn-sm',
                     exportOptions: {
-                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
                     },
                 },
                 {
@@ -140,7 +139,7 @@
                     text: 'PDF',
                     className: 'btn btn-info btn-sm',
                     exportOptions: {
-                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
                     },
                 }
             ],
@@ -148,7 +147,7 @@
                     data: null,
                 },
                 {
-                    data: "registrationID"
+                    data: "university"
                 },
                 {
                     data: "name"
@@ -167,9 +166,6 @@
                 },
                 {
                     data: "address"
-                },
-                {
-                    data: "university"
                 },
                 {
                     data: "studentId"
